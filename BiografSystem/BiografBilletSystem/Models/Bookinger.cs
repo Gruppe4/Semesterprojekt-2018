@@ -13,6 +13,6 @@ namespace BiografBilletSystem.Models
             
         }
 
-        public List<Kunde> 
+        
     }
 }
