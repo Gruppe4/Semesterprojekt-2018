@@ -6,12 +6,23 @@ namespace BiografBilletSystem.Models
     {
         //To-do: skal holde styr på alle biografens Film, forestillinger og sale.
 
-        private List<Film> _filmliste = new List<Film>();
-        //private Factory _factory;
+        private List<Film> _filmListe = new List<Film>();
+        private List<Forestilling> _forestillingListe = new List<Forestilling>();
 
-        public Biograf()
+        public Biograf(List<Film> FilmListe, List<Forestilling> ForestillingListe)
         {
-            ;
+            _filmListe = FilmListe;
+            _forestillingListe = ForestillingListe;
+        }
+
+        public void TilføjFilm(Film nyFilm)
+        {
+            _filmListe.Add(nyFilm);
+        }
+
+        public void TilføjForestilling(Forestilling nyForestiliing)
+        {
+            _forestillingListe.Add(nyForestiliing);
         }
     }
 }

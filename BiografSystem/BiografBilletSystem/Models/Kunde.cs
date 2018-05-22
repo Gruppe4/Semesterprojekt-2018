@@ -1,4 +1,6 @@
-﻿namespace BiografBilletSystem.Models
+﻿using System.Collections.Generic;
+
+namespace BiografBilletSystem.Models
 {
     public class Kunde
     {
@@ -10,7 +12,10 @@
         public int TlfNr { get; set; }
         public bool Medlem { get; set; }
 
-        public Kunde(string navn, string adresse, string email, int postNummer, int tlfNr)
+        public List<int> BestiltSædeIndex = new List<int>();
+
+        public Kunde(string navn, string adresse, string email,
+             int postNummer, int tlfNr, List<int> bestilteSæder)
         {
             Navn = navn;
             Adresse = adresse;
@@ -18,6 +23,8 @@
             PostNummer = postNummer;
             TlfNr = tlfNr;
             Medlem = false;
+            BestiltSædeIndex = bestilteSæder;
         }
+
     }
 }
