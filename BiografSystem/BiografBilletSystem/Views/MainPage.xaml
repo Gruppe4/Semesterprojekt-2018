@@ -18,12 +18,36 @@
         <ListView HorizontalAlignment="Left"
                   Width="385"
                   Height="880"
-                  Margin="50,0,50,0" ItemsSource="{Binding AlleFilm}"/>
+                  Margin="50,0,50,0"
+                  ItemsSource="{Binding AlleFilm}">
+
+            <ListView.ItemTemplate>
+            <DataTemplate>
+            <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10" BorderBrush="Black">
+                <TextBlock Text="{Binding Titel}"/>
+                <TextBlock Text="{Binding Genre}"/>
+                <TextBlock Text="{Binding Spilletid}"/>
+                    </StackPanel>
+            </DataTemplate>
+            </ListView.ItemTemplate>
+            </ListView>
+
+
         <GridView HorizontalAlignment="Left"
                   Width="1080"
                   Height="880"
-                  Margin="0,0,50,0"/>
+                  Margin="0,0,50,0">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10" BorderBrush="Black">
+                    <TextBlock Text="{Binding AlleFilm}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
         <StackPanel Width="280" Height="880">
+
                     
         </StackPanel>
 
