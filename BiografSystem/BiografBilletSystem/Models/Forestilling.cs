@@ -12,6 +12,16 @@ namespace BiografBilletSystem.Models
 
         public Sal Sal { get; private set; }
 
+        public DateTime SlutTid { get; private set; }
+
+        public Forestilling(Sal sal, Film film, DateTime start)
+        {
+            StartTid = start;
+            Sal = sal;
+            Film = film;
+            SlutTid = StartTid.AddMinutes(Film.Spilletid);
+        }
+
     
     }
 }
