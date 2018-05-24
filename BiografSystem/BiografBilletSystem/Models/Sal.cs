@@ -8,15 +8,24 @@ namespace BiografBilletSystem.Models
         private int _rækker;
         private int _sæder;
         List<Sæde> _sædeList = new List<Sæde>();
+        private int _salNr;
+        public static int salInstance = 1;
 
         public Sal(int sæderPrRække, int rækker)
         {
             _sæder = sæderPrRække * rækker;
             _rækker = rækker;
+            _salNr = salInstance;
+            salInstance++;
             for (int index = 0; index < _sæder; index++)
             {
                 _sædeList.Add(LavSæde(index));
             }
+        }
+
+        public int SalNr
+        {
+            get { return _salNr; }
         }
 
         public Sæde ReturnerSæde(int index)
@@ -25,15 +34,15 @@ namespace BiografBilletSystem.Models
         }
         public Sæde LavSæde(int index)
         {
-            return new Sæde(SædeRække(index),SædeNummer(index));
+            return new Sæde(SædeRække(index), SædeNummer(index));
         }
         public int SædeNummer(int index)
         {
-           index = index % _rækker + 1;
+            index = index % _rækker + 1;
             int sæderPrRække = ((_sæder / _rækker));
             if (sæderPrRække % 2 == 0)
             {
-                if (index < sæderPrRække/2)
+                if (index < sæderPrRække / 2)
                 {
                     return (sæderPrRække - index * 2 - 2);
                 }

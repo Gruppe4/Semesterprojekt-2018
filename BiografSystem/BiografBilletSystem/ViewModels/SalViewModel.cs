@@ -14,6 +14,7 @@ namespace BiografBilletSystem.ViewModels
         }
         public Sal Sal
         {
+            //Implement Filter
             get { return _sal; }
             set { _sal = value; }
         }
