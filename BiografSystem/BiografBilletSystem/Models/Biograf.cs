@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace BiografBilletSystem.Models
 {
@@ -24,15 +23,16 @@ namespace BiografBilletSystem.Models
         private List<Forestilling> _forestillingListe;
         private List<Sal> _salList;
 
+
         #endregion
 
         #region Constructor
 
         public Biograf()
         {
-            _filmListe = new List<Film>();
-            _forestillingListe = new List<Forestilling>();
-            _salList = new List<Sal>();
+            _filmListe = Factory.PopulateFilms();
+            _salList = Factory.PopulateSale();
+            _forestillingListe = Factory.PopulateForestillinger(_salList, _filmListe);
         }
 
         #endregion
@@ -53,7 +53,7 @@ namespace BiografBilletSystem.Models
             return null;
         }
 
-        
+
         public void TilføjFilm(Film nyFilm)
         {
             _filmListe.Add(nyFilm);
