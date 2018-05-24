@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using BiografBilletSystem.Models;
+﻿using BiografBilletSystem.Models;
+using System.Collections.Generic;
 
 namespace BiografBilletSystem.ViewModels
 {
@@ -21,6 +21,12 @@ namespace BiografBilletSystem.ViewModels
         public List<Film> AlleFilm
         {
             get { return _biograf.AlleFilm; }
+        }
+
+        public List<Forestilling> AlleForestillinger
+        {
+            //Implement sorting
+            get { return _forestillingsListe; }
         }
 
         public Film SelectedFilm
