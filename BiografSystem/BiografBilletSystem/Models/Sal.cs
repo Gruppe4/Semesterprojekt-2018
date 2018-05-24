@@ -13,9 +13,9 @@ namespace BiografBilletSystem.Models
         {
             _sæder = sæderPrRække * rækker;
             _rækker = rækker;
-            for (int sæde = 0; sæde < _sæder; sæde++)
+            for (int index = 0; index < _sæder; index++)
             {
-                _sædeList.Add(LavSæde(sæde));
+                _sædeList.Add(LavSæde(index));
             }
         }
 
