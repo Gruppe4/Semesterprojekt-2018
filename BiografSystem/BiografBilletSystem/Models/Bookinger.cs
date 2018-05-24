@@ -6,13 +6,15 @@ namespace BiografBilletSystem.Models
     {
         //To-do: Skal holde styr på alle bookingerne til en specifik forestilling
 
-        private List<Kunde> BookingListe = new List<Kunde>();
-
         public Bookinger()
         {
-            
         }
 
-        
+        public List<Kunde> AlleKunder { get; private set; } = new List<Kunde>();
+
+        public void TilføjKunde(Kunde kunde)
+        {
+            AlleKunder.Add(kunde);
+        }
     }
 }
