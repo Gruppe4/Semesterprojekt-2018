@@ -36,11 +36,23 @@
         <GridView HorizontalAlignment="Left"
                   Width="1080"
                   Height="880"
-                  Margin="0,0,50,0">
+                  Margin="0,0,50,0"
+                  ItemsSource="{Binding AlleForestillinger}">
             <GridView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10" BorderBrush="Black">
-                    <TextBlock Text="{Binding AlleFilm}"/>
+                    <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10"  BorderBrush="Black" BorderThickness="2">
+
+                    <StackPanel Orientation="Horizontal" Margin="10, 10, 10, 10">
+                        <Image Height="200" Width="200"/>
+                    <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10">
+                    <TextBlock Text="{Binding Film.Titel}"/>
+                        <TextBlock Text="{Binding Film.Indstruktør}"/>
+                        <TextBlock Text="{Binding Film.Spilletid}"/>
+                    </StackPanel>
+                    </StackPanel>
+                        <TextBlock Text="{Binding Sal}"/>
+                        <TextBlock Text="{Binding StartTid}"/>
+                        <TextBlock Text="{Binding SlutTid}"/>
                     </StackPanel>
                 </DataTemplate>
             </GridView.ItemTemplate>
