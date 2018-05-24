@@ -6,10 +6,27 @@ namespace BiografBilletSystem.Models
     public class Biograf
     {
         //To-do: skal holde styr på alle biografens Film, forestillinger og sale.
+        #region Singleton
+        private static Biograf _instance;
+        public static Biograf Instance
+        {
+            get
+            {
+                _instance = _instance ?? (_instance = new Biograf());
+                return _instance;
+            }
+        }
+        #endregion
+
+        #region Instance Fields
 
         private List<Film> _filmListe;
         private List<Forestilling> _forestillingListe;
         private List<Sal> _salList;
+
+        #endregion
+
+        #region Constructor
 
         public Biograf()
         {
@@ -17,6 +34,11 @@ namespace BiografBilletSystem.Models
             _forestillingListe = new List<Forestilling>();
             _salList = new List<Sal>();
         }
+
+        #endregion
+
+        #region Methods
+
         public Film HentFilm(string filmTitel)
         {
 
@@ -46,5 +68,7 @@ namespace BiografBilletSystem.Models
         {
             _salList.Add(nySal);
         }
+
+        #endregion
     }
 }
