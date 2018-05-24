@@ -66,6 +66,11 @@ namespace BiografBilletSystem.Models
             }
         }
 
+        public override string ToString()
+        {
+            return $"Sal Nr: {SalNr}";
+        }
+
         public int SædeRække(int index)
         {
             return index / _rækker;
