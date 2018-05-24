@@ -9,13 +9,15 @@ namespace BiografBilletSystem.ViewModels
         private Film _selectedFilm;
         private List<Forestilling> _forestillingsListe;
         private Forestilling _selectedForestilling;
+        private SalViewModel _salViewModel;
 
         public MainViewModel()
         {
             _biograf = new Biograf();
             _selectedFilm = null;
-            _selectedForestilling = null;
+            _selectedForestilling = _forestillingsListe[0];
             _forestillingsListe = _biograf.AlleForestillinger;
+            _salViewModel = new SalViewModel(_selectedForestilling.Sal, _selectedForestilling.AlleBookinger);
         }
 
         public List<Film> AlleFilm
@@ -38,7 +40,10 @@ namespace BiografBilletSystem.ViewModels
         public Forestilling SelectedForestilling
         {
             get { return _selectedForestilling; }
-            set { _selectedForestilling = value; }
+            set
+            {
+                _selectedForestilling = value;
+            }
         }
     }
 }

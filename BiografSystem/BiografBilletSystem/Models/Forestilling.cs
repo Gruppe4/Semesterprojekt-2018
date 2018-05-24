@@ -13,7 +13,12 @@ namespace BiografBilletSystem.Models
         public Sal Sal { get; private set; }
 
         public DateTime SlutTid { get; private set; }
-        
+
+        public Bookinger AlleBookinger
+        {
+            get { return _bookinger; }
+        }
+
         public Forestilling(Sal sal, Film film, DateTime start)
         {
             StartTid = start;
