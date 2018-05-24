@@ -7,14 +7,22 @@ namespace BiografBilletSystem.Models
         // To-do: Skal indeholde relevant information om en specifik sal
         private int _rækker;
         private int _sæder;
-        List<Sæde> _sædeNr = new List<Sæde>();
+        List<Sæde> _sædeList = new List<Sæde>();
 
         public Sal(int sæderPrRække, int rækker)
         {
             _sæder = sæderPrRække * rækker;
             _rækker = rækker;
+            for (int sæde = 0; sæde < _sæder; sæde++)
+            {
+                _sædeList.Add(LavSæde(sæde));
+            }
         }
 
+        public Sæde ReturnerSæde(int index)
+        {
+            return _sædeList[index];
+        }
         public Sæde LavSæde(int index)
         {
             return new Sæde(SædeRække(index),SædeNummer(index));
