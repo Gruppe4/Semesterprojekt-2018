@@ -37,6 +37,15 @@ namespace BiografBilletSystem.Models
 
         #endregion
 
+        public List<Forestilling> AlleForestillinger
+        {
+            get { return _forestillingListe; }
+        }
+        public List<Film> AlleFilm
+        {
+            get { return _filmListe; }
+        }
+
         #region Methods
 
         public Film HentFilm(string filmTitel)
