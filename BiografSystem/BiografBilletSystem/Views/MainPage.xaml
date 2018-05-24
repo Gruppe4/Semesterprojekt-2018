@@ -14,11 +14,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         
-        <Button Content="Videre" 
-                Command="NavigationCommands.GoToPage" 
-                CommandParameter="/SalPage.xaml">
-
-        </Button>
+        
 
 
     </Grid>

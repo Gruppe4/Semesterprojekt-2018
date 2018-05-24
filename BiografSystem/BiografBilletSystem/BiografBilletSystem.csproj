@@ -104,7 +104,6 @@
     <Compile Include="Models\Sal.cs" />
     <Compile Include="Models\Sæde.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\Commands\RelayCommand.cs" />
     <Compile Include="ViewModels\KvitteringViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PersonalInfoViewModel.cs" />
