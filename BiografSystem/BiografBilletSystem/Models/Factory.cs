@@ -19,13 +19,13 @@ namespace BiografBilletSystem.Models
 
         static List<Sal> PopulateSale()
         {
-            List<Sal> salListe = new List<Sal>() {new Sal(30, 22), new Sal(19, 15)};
+            List<Sal> salListe = new List<Sal>() { new Sal(30, 22), new Sal(19, 15) };
             return salListe;
         }
 
-        static List<Forestilling> PopulateForestillinger()
+        static List<Forestilling> PopulateForestillinger(List<Sal> salList, List<Film> filmList)
         {
-            List<Forestilling> forestillingsListe = new List<Forestilling>() {};
+            List<Forestilling> forestillingsListe = new List<Forestilling>() { new Forestilling(salList[0], filmList[0], DateTime.Now.AddDays(1)) };
             return forestillingsListe;
         }
     }
