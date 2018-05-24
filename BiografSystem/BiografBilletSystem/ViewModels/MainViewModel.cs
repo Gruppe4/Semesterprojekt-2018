@@ -15,8 +15,8 @@ namespace BiografBilletSystem.ViewModels
         {
             _biograf = new Biograf();
             _selectedFilm = null;
-            _selectedForestilling = _forestillingsListe[0];
             _forestillingsListe = _biograf.AlleForestillinger;
+            _selectedForestilling = _forestillingsListe[0];
             _salViewModel = new SalViewModel(_selectedForestilling.Sal, _selectedForestilling.AlleBookinger);
         }
 

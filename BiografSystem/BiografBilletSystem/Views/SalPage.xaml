@@ -5,9 +5,23 @@
     xmlns:local="using:BiografBilletSystem"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:BiografBilletSystem.ViewModels"
     mc:Ignorable="d">
+    <Page.DataContext>
+        <viewModels:MainViewModel/>
+    </Page.DataContext>
+    <StackPanel>
+        <TextBox Text="Lærred" FontSize ="30" Height="50" Width="1400" Margin="10, 10, 10 , 10" HorizontalAlignment="Stretch" RequestedTheme="Dark" Visibility="Visible" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Arial Black" FontWeight="Normal"/>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+<GridView HorizontalAlignment="Center" Height="900" Width="1800" 
+              Margin="50, 50, 50, 50" >
+        <GridView.ItemTemplate>
+            <DataTemplate>
+            </DataTemplate>
+        </GridView.ItemTemplate>
 
-    </Grid>
+
+    </GridView>
+    </StackPanel>
+
 </Page>

@@ -34,7 +34,7 @@
 
 
         <GridView HorizontalAlignment="Left"
-                  Width="1080"
+                  Width="480"
                   Height="880"
                   Margin="0,0,50,0"
                   ItemsSource="{Binding AlleForestillinger}">
@@ -59,8 +59,13 @@
         </GridView>
 
         <StackPanel Width="280" Height="880">
+            <GridView HorizontalAlignment="Center" 
+                      Margin="50, 50, 50, 50" ItemsSource="{Binding SelectedForestilling.Sal}">
+                
 
-                    
+
+            </GridView>
+
         </StackPanel>
 
     </StackPanel>
