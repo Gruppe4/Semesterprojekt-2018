@@ -18,5 +18,15 @@ namespace BiografBilletSystem.ViewModels
             _forestilling = MainViewModel.selectedForestilling;
             _salViewModel = new SalViewModel(_forestilling.Sal, _forestilling.AlleBookinger);
         }
+
+        public Forestilling Forestilling
+        {
+            get { return _forestilling; }
+        }
+
+        public SalViewModel SalViewModel
+        {
+            get { return _salViewModel; }
+        }
     }
 }

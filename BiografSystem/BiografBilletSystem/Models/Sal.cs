@@ -23,6 +23,11 @@ namespace BiografBilletSystem.Models
             }
         }
 
+        public List<Sæde> SædeList
+        {
+            get { return _sædeList; }
+        }
+
         public int SalNr
         {
             get { return _salNr; }

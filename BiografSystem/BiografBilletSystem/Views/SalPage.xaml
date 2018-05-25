@@ -18,9 +18,14 @@
         <Image Source="Images/Lærred.JPG" Height="100" Width="900" HorizontalAlignment="Center"/>
     </StackPanel>
             <GridView HorizontalAlignment="Center" Height="500" Width="1200" 
-              Margin="50, 50, 50, 50" >
-            <GridView.ItemTemplate>
+              Margin="50, 50, 50, 50"
+              ItemsSource="{Binding SalViewModel.Sal.SædeList}">
+
+                <GridView.ItemTemplate>
             <DataTemplate>
+                <StackPanel Orientation="Horizontal" Height="5" Width="5">
+                <TextBlock Text="{Binding Nummer}"/>
+                </StackPanel>
                 
             </DataTemplate>
         </GridView.ItemTemplate>
