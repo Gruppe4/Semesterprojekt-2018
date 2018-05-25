@@ -19,5 +19,10 @@ namespace BiografBilletSystem.Views
         {
             this.Frame.Navigate(typeof(SalPage), null);
         }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -16,10 +16,10 @@
                 Width="auto"
                 Orientation="Horizontal">
         <ListView HorizontalAlignment="Left"
-                  Width="385"
+                  Width="190"
                   Height="880"
                   Margin="50,0,50,0"
-                  ItemsSource="{Binding AlleFilm}">
+                  ItemsSource="{Binding AlleFilm}" SelectionChanged="ListView_SelectionChanged">
 
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -34,7 +34,7 @@
 
 
         <GridView HorizontalAlignment="Left"
-                  Width="480"
+                  Width="600"
                   Height="880"
                   Margin="0,0,50,0"
                   ItemsSource="{Binding AlleForestillinger}">
@@ -43,19 +43,17 @@
                     <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10"  BorderBrush="Black" BorderThickness="2">
 
                         <StackPanel Orientation="Horizontal" Margin="10, 10, 10, 10">
-                            <Image Height="200"
-                                   Width="200"
+                            <Image Height="250"
+                                   Width="250"
                                    Source="{Binding Film.BilledeUri}"
                                    Stretch="Uniform" />
-                            <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10">
-                                <TextBlock Text="{Binding Film.Titel}"/>
-                                <TextBlock Text="{Binding Film.Indstruktør}"/>
-                                <TextBlock Text="{Binding Film.Spilletid}"/>
-                            </StackPanel>
                         </StackPanel>
                         <TextBlock Text="{Binding Sal}"/>
                         <TextBlock Text="{Binding StartTid}"/>
-                        <TextBlock Text="{Binding SlutTid}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Spilletid:"/>
+                            <TextBlock Text="{Binding Film.Spilletid}"/>
+                        </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </GridView.ItemTemplate>
@@ -63,8 +61,33 @@
 
         <StackPanel Width="280" Height="880">
             
-            <StackPanel Orientation="Horizontal" Margin="10, 10, 10, 10" Height="30" Width="auto">
-            <TextBlock Text="{Binding SelectedForestilling.Film.Titel}"/>
+            <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10" Height="auto" Width="auto">
+                <TextBlock Text="Titel:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedForestilling.Film.Titel}"/>
+
+                <TextBlock Text="Skuespillere:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedForestilling.Film.Stjerner}" TextWrapping="Wrap"/>
+
+                <TextBlock Text="Indstruktør:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedForestilling.Film.Indstruktør}"/>
+
+                <TextBlock Text="Genre:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedForestilling.Film.Genre}"/>
+
+                <TextBlock Text="Resumé:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedForestilling.Film.Resumé}" TextWrapping="Wrap"/>
+
+                <TextBlock Text="Dato:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedForestilling.Film.Dato}"/>
+
+                <TextBlock Text="Spilletid:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedForestilling.Film.Spilletid}"/>
+                <Image Height="200"
+                       Width="200"
+                       Source="{Binding SelectedForestilling.Film.BilledeUri}"
+                       Stretch="Uniform" />
+
+
             </StackPanel>
             <Button Content="SalPageNavigation"
                     HorizontalAlignment="Stretch"
