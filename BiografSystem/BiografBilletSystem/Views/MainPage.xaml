@@ -59,12 +59,10 @@
         </GridView>
 
         <StackPanel Width="280" Height="880">
-            <GridView HorizontalAlignment="Center" 
-                      Margin="50, 50, 50, 50" ItemsSource="{Binding SelectedForestilling.Sal}">
-
-
-
-            </GridView>
+            
+            <Button Content="SalPageNavigation"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch" Click="Button_navigation_sal"/>
 
         </StackPanel>
 
