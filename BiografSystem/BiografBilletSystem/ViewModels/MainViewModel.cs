@@ -1,14 +1,18 @@
 ﻿using BiografBilletSystem.Models;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using BiografBilletSystem.Annotations;
 
 namespace BiografBilletSystem.ViewModels
 {
-    public class MainViewModel
+    public class MainViewModel : INotifyPropertyChanged
     {
         private Biograf _biograf;
         private Film _selectedFilm;
         private List<Forestilling> _forestillingsListe;
-        private Forestilling _selectedForestilling;
+        public static Forestilling selectedForestilling;
         private SalViewModel _salViewModel;
 
         public MainViewModel()
@@ -16,8 +20,8 @@ namespace BiografBilletSystem.ViewModels
             _biograf = new Biograf();
             _selectedFilm = null;
             _forestillingsListe = _biograf.AlleForestillinger;
-            _selectedForestilling = _forestillingsListe[0];
-            _salViewModel = new SalViewModel(_selectedForestilling.Sal, _selectedForestilling.AlleBookinger);
+            selectedForestilling = _forestillingsListe[0];
+            _salViewModel = new SalViewModel(selectedForestilling.Sal, selectedForestilling.AlleBookinger);
         }
 
         public List<Film> AlleFilm
@@ -28,22 +32,48 @@ namespace BiografBilletSystem.ViewModels
         public List<Forestilling> AlleForestillinger
         {
             //Implement sorting
-            get { return _forestillingsListe; }
+            get
+            {
+                if (SelectedFilm == null)
+                {
+                    return _forestillingsListe;
+                }
+                else
+                {
+                    var forestillingerList = from forestilling in _biograf.AlleForestillinger
+                        where forestilling.Film.Titel == _selectedFilm.Titel
+                        select forestilling;
+                    return forestillingerList.ToList();
+                }
+            }
         }
 
         public Film SelectedFilm
         {
             get { return _selectedFilm; }
-            set { _selectedFilm = value; }
+            set
+            {
+                _selectedFilm = value;
+                OnPropertyChanged(nameof(AlleForestillinger));
+            }
         }
 
         public Forestilling SelectedForestilling
         {
-            get { return _selectedForestilling; }
+            get { return selectedForestilling; }
             set
             {
-                _selectedForestilling = value;
+                selectedForestilling = value;
+                OnPropertyChanged();
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -16,10 +16,12 @@
                 Width="auto"
                 Orientation="Horizontal">
         <ListView HorizontalAlignment="Left"
+                  Name="FilmListView"
                   Width="190"
                   Height="880"
                   Margin="50,0,50,0"
-                  ItemsSource="{Binding AlleFilm}" SelectionChanged="ListView_SelectionChanged">
+                  ItemsSource="{Binding AlleFilm}"
+                  SelectedItem="{Binding SelectedFilm, Mode=TwoWay}">
 
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -37,7 +39,8 @@
                   Width="600"
                   Height="880"
                   Margin="0,0,50,0"
-                  ItemsSource="{Binding AlleForestillinger}">
+                  ItemsSource="{Binding AlleForestillinger}"
+                  SelectedItem="{Binding SelectedForestilling, Mode=TwoWay}">
             <GridView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10"  BorderBrush="Black" BorderThickness="2">
