@@ -33,7 +33,6 @@ namespace BiografBilletSystem.ViewModels
                         sædeList[_bookingList.AlleKunder[i].BestiltSædeIndex[j]].Reserveret = true;
                     }
                 }
-
                 return sædeList;
             }
         }
