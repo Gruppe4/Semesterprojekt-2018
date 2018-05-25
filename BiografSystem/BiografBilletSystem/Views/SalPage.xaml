@@ -8,7 +8,7 @@
     xmlns:viewModels="using:BiografBilletSystem.ViewModels"
     mc:Ignorable="d">
     <Page.DataContext>
-        <viewModels:MainViewModel/>
+        <viewModels:ForestillingViewModel/>
     </Page.DataContext>
     <StackPanel>
 
