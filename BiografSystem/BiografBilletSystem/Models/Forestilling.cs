@@ -27,5 +27,7 @@ namespace BiografBilletSystem.Models
             SlutTid = StartTid.AddMinutes(Film.Spilletid);
             _bookinger = new Bookinger();
         }
+
+     
     }
 }
