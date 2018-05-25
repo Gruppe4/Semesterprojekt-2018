@@ -36,6 +36,7 @@ namespace BiografBilletSystem.ViewModels
             {
                 if (SelectedFilm == null)
                 {
+                    SelectedForestilling = _forestillingsListe[0];
                     return _forestillingsListe;
                 }
                 else
@@ -43,6 +44,7 @@ namespace BiografBilletSystem.ViewModels
                     var forestillingerList = from forestilling in _biograf.AlleForestillinger
                         where forestilling.Film.Titel == _selectedFilm.Titel
                         select forestilling;
+                    SelectedForestilling = forestillingerList.First();
                     return forestillingerList.ToList();
                 }
             }
@@ -60,7 +62,17 @@ namespace BiografBilletSystem.ViewModels
 
         public Forestilling SelectedForestilling
         {
-            get { return selectedForestilling; }
+            get
+            {
+                if (selectedForestilling == null)
+                {
+                    return AlleForestillinger[0];
+                }
+                else
+                {
+                    return selectedForestilling;
+                }
+            }
             set
             {
                 selectedForestilling = value;
