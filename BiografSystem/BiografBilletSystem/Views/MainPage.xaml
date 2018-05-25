@@ -11,9 +11,9 @@
         <viewModels:MainViewModel />
     </Page.DataContext>
     <StackPanel HorizontalAlignment="Left"
-                Height="1080"
+                Height="auto"
                 VerticalAlignment="Top"
-                Width="1920"
+                Width="auto"
                 Orientation="Horizontal">
         <ListView HorizontalAlignment="Left"
                   Width="385"
@@ -22,15 +22,15 @@
                   ItemsSource="{Binding AlleFilm}">
 
             <ListView.ItemTemplate>
-            <DataTemplate>
-            <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10" BorderBrush="Black">
-                <TextBlock Text="{Binding Titel}"/>
-                <TextBlock Text="{Binding Genre}"/>
-                <TextBlock Text="{Binding Spilletid}"/>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10" BorderBrush="Black">
+                        <TextBlock Text="{Binding Titel}"/>
+                        <TextBlock Text="{Binding Genre}"/>
+                        <TextBlock Text="{Binding Spilletid}"/>
                     </StackPanel>
-            </DataTemplate>
+                </DataTemplate>
             </ListView.ItemTemplate>
-            </ListView>
+        </ListView>
 
 
         <GridView HorizontalAlignment="Left"
@@ -42,14 +42,14 @@
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10"  BorderBrush="Black" BorderThickness="2">
 
-                    <StackPanel Orientation="Horizontal" Margin="10, 10, 10, 10">
-                        <Image Height="200" Width="200"/>
-                    <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10">
-                    <TextBlock Text="{Binding Film.Titel}"/>
-                        <TextBlock Text="{Binding Film.Indstruktør}"/>
-                        <TextBlock Text="{Binding Film.Spilletid}"/>
-                    </StackPanel>
-                    </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="10, 10, 10, 10">
+                            <Image Height="200" Width="200"/>
+                            <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10">
+                                <TextBlock Text="{Binding Film.Titel}"/>
+                                <TextBlock Text="{Binding Film.Indstruktør}"/>
+                                <TextBlock Text="{Binding Film.Spilletid}"/>
+                            </StackPanel>
+                        </StackPanel>
                         <TextBlock Text="{Binding Sal}"/>
                         <TextBlock Text="{Binding StartTid}"/>
                         <TextBlock Text="{Binding SlutTid}"/>
@@ -61,7 +61,7 @@
         <StackPanel Width="280" Height="880">
             <GridView HorizontalAlignment="Center" 
                       Margin="50, 50, 50, 50" ItemsSource="{Binding SelectedForestilling.Sal}">
-                
+
 
 
             </GridView>
