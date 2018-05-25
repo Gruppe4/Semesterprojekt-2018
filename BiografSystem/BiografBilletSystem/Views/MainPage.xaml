@@ -60,6 +60,9 @@
 
         <StackPanel Width="280" Height="880">
             
+            <StackPanel Orientation="Horizontal" Margin="10, 10, 10, 10" Height="30" Width="auto">
+            <TextBlock Text="{Binding SelectedForestilling.Film.Titel}"/>
+            </StackPanel>
             <Button Content="SalPageNavigation"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch" Click="Button_navigation_sal"/>

@@ -11,7 +11,7 @@
         <viewModels:MainViewModel/>
     </Page.DataContext>
     <StackPanel>
-        <TextBox Text="Lærred" FontSize ="30" Height="50" Width="1400" Margin="10, 10, 10 , 10" HorizontalAlignment="Stretch" RequestedTheme="Dark" Visibility="Visible" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Arial Black" FontWeight="Normal"/>
+       
 
 <GridView HorizontalAlignment="Center" Height="800" Width="1300" 
               Margin="50, 50, 50, 50" >
