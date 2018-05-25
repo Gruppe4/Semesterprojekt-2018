@@ -131,6 +131,7 @@
     <None Include="BiografBilletSystem_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Images\Lærred.JPG" />
     <Content Include="Views\Images\Alien.jpg" />
     <Content Include="Views\Images\PulpFiction.jpg" />
     <Content Include="Views\Images\Terminator2.jpg" />

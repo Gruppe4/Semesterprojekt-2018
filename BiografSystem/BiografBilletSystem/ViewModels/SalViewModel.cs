@@ -18,5 +18,8 @@ namespace BiografBilletSystem.ViewModels
             get { return _sal; }
             set { _sal = value; }
         }
+
+       
+        
     }
 }
