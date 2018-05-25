@@ -129,6 +129,7 @@
     <None Include="BiografBilletSystem_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\The Dark Knight.jpg" />
     <Content Include="Libraries\AddOns.dll" />
     <Content Include="Libraries\Commands.dll" />
     <Content Include="Libraries\Controllers.dll" />

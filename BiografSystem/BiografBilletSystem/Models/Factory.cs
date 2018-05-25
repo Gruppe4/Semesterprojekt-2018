@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Windows.UI.Xaml.Controls;
 
 namespace BiografBilletSystem.Models
 {
@@ -14,7 +15,7 @@ namespace BiografBilletSystem.Models
                           "he wreaks havoc and chaos on the people of Gotham. " +
                           "The Dark Knight must accept one of the greatest psychological " +
                           "and physical tests of his ability to fight injustice.",
-                        new DateTime(2018, 7, 18), "URL The Dark Knight ")};
+                        new DateTime(2018, 7, 18), "Assets/The Dark Knight.jpg")};
             return filmListe;
         }
 
