@@ -130,7 +130,7 @@
     <None Include="BiografBilletSystem_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\The Dark Knight.jpg" />
+    <Content Include="Views\Images\The Dark Knight.jpg" />
     <Content Include="Libraries\AddOns.dll" />
     <Content Include="Libraries\Commands.dll" />
     <Content Include="Libraries\Controllers.dll" />
@@ -209,6 +209,7 @@
       <HintPath>..\..\..\..\..\Downloads\ViewModel.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

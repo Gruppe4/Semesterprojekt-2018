@@ -15,7 +15,7 @@ namespace BiografBilletSystem.Models
                           "he wreaks havoc and chaos on the people of Gotham. " +
                           "The Dark Knight must accept one of the greatest psychological " +
                           "and physical tests of his ability to fight injustice.",
-                        new DateTime(2018, 7, 18), "Assets/The Dark Knight.jpg")};
+                        new DateTime(2018, 7, 18), "Images/The Dark Knight.jpg")};
             return filmListe;
         }
 

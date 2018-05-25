@@ -16,5 +16,6 @@ namespace BiografBilletSystem.Models
         {
             AlleKunder.Add(kunde);
         }
+
     }
 }

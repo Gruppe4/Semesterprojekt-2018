@@ -43,7 +43,10 @@
                     <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10"  BorderBrush="Black" BorderThickness="2">
 
                         <StackPanel Orientation="Horizontal" Margin="10, 10, 10, 10">
-                            <Image Height="200" Width="200"/>
+                            <Image Height="200"
+                                   Width="200"
+                                   Source="{Binding Film.BilledeUri}"
+                                   Stretch="Uniform" />
                             <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10">
                                 <TextBlock Text="{Binding Film.Titel}"/>
                                 <TextBlock Text="{Binding Film.Indstruktør}"/>

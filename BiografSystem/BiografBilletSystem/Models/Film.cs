@@ -13,7 +13,7 @@ namespace BiografBilletSystem.Models
         public string Genre { get; private set; }
         public string Resumé { get; private set; }
         public DateTime Dato { get; private set; }
-        public string BilledeURI { get; private set; }
+        public string BilledeUri { get; private set; }
 
         public Film(string titel, int spilletid, string stjerner, string indstruktør, 
             string genre, string resumé, DateTime dato, string billede)
@@ -25,7 +25,7 @@ namespace BiografBilletSystem.Models
             Genre = genre;
             Resumé = resumé;
             Dato = dato;
-            BilledeURI = billede;
+            BilledeUri = billede;
         }
     }
 }
