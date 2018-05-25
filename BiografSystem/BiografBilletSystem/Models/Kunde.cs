@@ -11,7 +11,6 @@ namespace BiografBilletSystem.Models
         public int PostNummer { get; set; }
         public int TlfNr { get; set; }
         public bool Medlem { get; set; }
-        
 
         public List<int> BestiltSædeIndex = new List<int>();
 
