@@ -79,5 +79,12 @@ namespace BiografBilletSystem.Models
             };
             return forestillingsListe;
         }
+
+        public static List<Kunde> PopulateBookingList()
+        {
+            List<Kunde> kundeListe = new List<Kunde>();
+            kundeListe.Add(new Kunde("TestName", "TestAdress", "TestEmail", 1111, 11111111, new List<int>(){5,6,7}));
+            return kundeListe;
+        }
     }
 }

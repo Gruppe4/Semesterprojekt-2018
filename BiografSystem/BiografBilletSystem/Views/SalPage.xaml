@@ -19,14 +19,19 @@
     </StackPanel>
             <GridView HorizontalAlignment="Center" Height="500" Width="1200" 
               Margin="50, 50, 50, 50"
-              ItemsSource="{Binding SalViewModel.Sal.SædeList}">
-
+              ItemsSource="{Binding SalViewModel.SædeList}">
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapGrid MaximumRowsOrColumns="{Binding SalViewModel.Sal.SæderPrRække}"
+                                  Orientation="Horizontal"
+                                  HorizontalChildrenAlignment="Stretch"
+                                  VerticalChildrenAlignment="Stretch">
+                        </WrapGrid>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
                 <GridView.ItemTemplate>
             <DataTemplate>
-                <StackPanel Orientation="Horizontal" Height="5" Width="5">
-                <TextBlock Text="{Binding Nummer}"/>
-                </StackPanel>
-                
+                <Image Height="Auto" Width="Auto" Source="{Binding SædeUri}"></Image>
             </DataTemplate>
         </GridView.ItemTemplate>
 

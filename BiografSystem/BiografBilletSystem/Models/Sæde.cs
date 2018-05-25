@@ -14,5 +14,20 @@
             Nummer = nummer;
             Reserveret = false;
         }
+
+        public string SædeUri
+        {
+            get
+            {
+                if (Reserveret)
+                {
+                    return "Images/ReservedSeat.png";
+                }
+                else
+                {
+                    return "Images/FreeSeat.png";
+                }
+            }
+        }
     }
 }

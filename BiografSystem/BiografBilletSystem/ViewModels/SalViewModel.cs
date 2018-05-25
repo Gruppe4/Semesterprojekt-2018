@@ -1,4 +1,6 @@
-﻿using BiografBilletSystem.Models;
+﻿using System.Collections.Generic;
+using System.Linq;
+using BiografBilletSystem.Models;
 
 namespace BiografBilletSystem.ViewModels
 {
@@ -16,10 +18,26 @@ namespace BiografBilletSystem.ViewModels
         {
             //Implement Filter
             get { return _sal; }
-            set { _sal = value; }
         }
 
-       
-        
+        public List<Sæde> SædeList
+        {
+            get
+            {
+                List<Sæde> sædeList = new List<Sæde>();
+                sædeList = Sal.SædeList;
+                for (int i = 0; i < _bookingList.AlleKunder.Count; i++)
+                {
+                    for (int j = 0; j < _bookingList.AlleKunder[i].BestiltSædeIndex.Count; j++)
+                    {
+                        sædeList[_bookingList.AlleKunder[i].BestiltSædeIndex[j]].Reserveret = true;
+                    }
+                }
+
+                return sædeList;
+            }
+        }
+
+
     }
 }

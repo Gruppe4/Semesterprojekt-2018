@@ -10,7 +10,7 @@ namespace BiografBilletSystem.Models
         {
         }
 
-        public List<Kunde> AlleKunder { get; private set; } = new List<Kunde>();
+        public List<Kunde> AlleKunder { get; set; } = new List<Kunde>();
 
         public void TilføjKunde(Kunde kunde)
         {
