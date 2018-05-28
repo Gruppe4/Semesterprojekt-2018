@@ -21,5 +21,7 @@ namespace BiografBilletSystem
             Kortholder = kortholder;
         }
 
+
+
     }
 }

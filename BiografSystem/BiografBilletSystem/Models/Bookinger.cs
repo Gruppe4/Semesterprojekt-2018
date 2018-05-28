@@ -16,7 +16,7 @@ namespace BiografBilletSystem.Models
         public void TilføjKunde(Kunde kunde)
         {
             AlleKunder.Add(kunde);
-        }
+         }
 
     }
 }
