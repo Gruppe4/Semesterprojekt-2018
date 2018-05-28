@@ -19,8 +19,7 @@
     </StackPanel>
             <GridView HorizontalAlignment="Center" Height="500" Width="1200" 
               Margin="50, 50, 50, 0"
-              ItemsSource="{Binding SalViewModel.SædeList}"
-                      SelectionMode="Multiple">
+              ItemsSource="{Binding SalViewModel.SædeList}">
                 <GridView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapGrid MaximumRowsOrColumns="{Binding SalViewModel.Sal.SæderPrRække}"
@@ -30,9 +29,16 @@
                     </ItemsPanelTemplate>
                 </GridView.ItemsPanel>
                 <GridView.ItemTemplate>
+                    
             <DataTemplate>
-                <Image Height="25" Width="25" Source="{Binding SædeUri}"></Image>
-            </DataTemplate>
+                        <Grid Width="50" Height="50">
+                            <Image Height="25"
+                                   Width="25"
+                                   Source="{Binding SædeUri}" Margin="0,0,0,0"></Image>
+                            <CheckBox Visibility="{Binding CheckBox}" IsChecked="{Binding Checked, Mode=TwoWay}" Margin="15,0,0,0"/>
+                        </Grid>
+                
+                    </DataTemplate>
         </GridView.ItemTemplate>
 
 
