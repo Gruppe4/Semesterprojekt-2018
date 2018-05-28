@@ -7,6 +7,12 @@
         public int RækkeNr { get; private set; }
         public int Nummer { get; private set; }
         public bool Reserveret { get; set; }
+        public bool Checked { get; set; }
+
+        public bool CheckBox
+        {
+            get { return !Reserveret; }
+        }
 
         public Sæde(int rækkeNr, int nummer)
         {

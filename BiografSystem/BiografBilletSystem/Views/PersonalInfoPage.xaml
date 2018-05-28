@@ -13,8 +13,8 @@
     </Page.DataContext>
     
     <StackPanel Orientation=" Horizontal">
-        <GridView HorizontalAlignment="Left" Height="710" Width="650">
-<StackPanel Width=" 650" Height="710">
+        <GridView HorizontalAlignment="Left" Height="710" Width="620" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2">
+<StackPanel Width=" 620" Height="710">
 <TextBlock Text="Navn" Height="30" Width="200" Margin="10, 10, 10, 10"/>
                 <TextBox Text="{Binding Kunde.Navn}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
 
@@ -32,13 +32,26 @@
 
     <TextBlock Text="Er du medlem?" Height="30" Width="200" Margin="10, 10, 10, 10"/>
     <ToggleButton HorizontalAlignment="Center" Width="50" Height="30"/>
-                <!--<TextBlock Text="Dine sæder" Height="30" Width="50" Margin="10, 10, 10, 10"/>
-    <TextBox Text="{Binding Kunde.}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>-->
             </StackPanel>
 
         </GridView>
 
-    
+        
+            <GridView HorizontalAlignment="Right" Height="710" Width="620" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2">
+                <StackPanel Height="710" Width="620">
+            <TextBlock Text="Kortholder" Height="30" Width="200" Margin="10, 10, 10, 10"/>
+    <TextBox Text="{Binding Betaling.Kortholder}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
+
+                <TextBlock Text="Kortnummer" Height="30" Width="200" Margin="10, 10, 10, 10"/>
+                    <TextBox Text="{Binding Betaling.Kortnummer}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
+
+                <TextBlock Text="Udløbsdato" Height="30" Width="200" Margin="10, 10, 10, 10"/>
+                <DatePicker HorizontalAlignment="Center"/>
+
+            </StackPanel>
+        </GridView>
+  
+
 
     </StackPanel>
 </Page>

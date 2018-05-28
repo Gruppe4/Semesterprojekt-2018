@@ -56,12 +56,14 @@ namespace BiografBilletSystem.Models
 
         public static List<Sal> PopulateSale()
         {
-            List<Sal> salListe = new List<Sal>() { new Sal(30, 22),
-                new Sal(20, 13),
-                new Sal(19, 12),
-                new Sal(18, 11),
-                new Sal(15, 10),
-                new Sal(15, 10) };           
+            List<Sal> salListe = new List<Sal>()
+            { 
+                new Sal(18, 10),
+                new Sal(18, 9),
+                new Sal(16, 9),
+                new Sal(15, 8),
+                new Sal(15, 7)
+            };           
             return salListe;
         }
 
@@ -71,11 +73,22 @@ namespace BiografBilletSystem.Models
         {
             List<Forestilling> forestillingsListe = new List<Forestilling>()
             {
-                new Forestilling(salList[0], filmList[0], DateTime.Now.AddDays(1)), 
+                new Forestilling(salList[0], filmList[0], DateTime.Now.AddDays(1)),
+                new Forestilling(salList[2], filmList[0], DateTime.Now.AddDays(2)),
+                new Forestilling(salList[3], filmList[0], DateTime.Now.AddDays(4)),
+                new Forestilling(salList[1], filmList[1], DateTime.Now.AddDays(1)),
                 new Forestilling(salList[1], filmList[1], DateTime.Now.AddDays(2)),
-               new Forestilling(salList[2], filmList[2], DateTime.Now.AddDays(2)),
-              new Forestilling(salList[3], filmList[3], DateTime.Now.AddDays(3)),
-              new Forestilling(salList[4], filmList[4], DateTime.Now.AddDays(4))
+                new Forestilling(salList[2], filmList[1], DateTime.Now.AddDays(5)),
+                new Forestilling(salList[2], filmList[2], DateTime.Now.AddDays(1)),
+                new Forestilling(salList[0], filmList[2], DateTime.Now.AddDays(2)),
+                new Forestilling(salList[2], filmList[2], DateTime.Now.AddDays(3)),
+                new Forestilling(salList[3], filmList[3], DateTime.Now.AddDays(1)),
+                new  Forestilling(salList[4], filmList[3], DateTime.Now.AddDays(2)),
+                new Forestilling(salList[0], filmList[3], DateTime.Now.AddDays(4)),
+                new Forestilling(salList[4], filmList[4], DateTime.Now.AddDays(1)),
+                new Forestilling(salList[3], filmList[4], DateTime.Now.AddDays(2)),
+                new Forestilling(salList[1], filmList[4], DateTime.Now.AddDays(5))
+
             };
             return forestillingsListe;
         }

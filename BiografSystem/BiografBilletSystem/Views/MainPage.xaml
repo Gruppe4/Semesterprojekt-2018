@@ -99,7 +99,7 @@
 
 
             </StackPanel>
-            <Button Content="SalPageNavigation"
+            <Button Content="Videre"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch" Click="Button_navigation_sal"/>
 
