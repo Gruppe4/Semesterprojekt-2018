@@ -71,11 +71,22 @@ namespace BiografBilletSystem.Models
         {
             List<Forestilling> forestillingsListe = new List<Forestilling>()
             {
-                new Forestilling(salList[0], filmList[0], DateTime.Now.AddDays(1)), 
+                new Forestilling(salList[0], filmList[0], DateTime.Now.AddDays(1)),
+                new Forestilling(salList[2], filmList[0], DateTime.Now.AddDays(2)),
+                new Forestilling(salList[3], filmList[0], DateTime.Now.AddDays(4)),
+                new Forestilling(salList[1], filmList[1], DateTime.Now.AddDays(1)),
                 new Forestilling(salList[1], filmList[1], DateTime.Now.AddDays(2)),
-               new Forestilling(salList[2], filmList[2], DateTime.Now.AddDays(2)),
-              new Forestilling(salList[3], filmList[3], DateTime.Now.AddDays(3)),
-              new Forestilling(salList[4], filmList[4], DateTime.Now.AddDays(4))
+                new Forestilling(salList[2], filmList[1], DateTime.Now.AddDays(5)),
+                new Forestilling(salList[2], filmList[2], DateTime.Now.AddDays(1)),
+                new Forestilling(salList[0], filmList[2], DateTime.Now.AddDays(2)),
+                new Forestilling(salList[2], filmList[2], DateTime.Now.AddDays(3)),
+                new Forestilling(salList[3], filmList[3], DateTime.Now.AddDays(1)),
+                new  Forestilling(salList[4], filmList[3], DateTime.Now.AddDays(2)),
+                new Forestilling(salList[0], filmList[3], DateTime.Now.AddDays(4)),
+                new Forestilling(salList[4], filmList[4], DateTime.Now.AddDays(1)),
+                new Forestilling(salList[3], filmList[4], DateTime.Now.AddDays(2)),
+                new Forestilling(salList[1], filmList[4], DateTime.Now.AddDays(5))
+
             };
             return forestillingsListe;
         }

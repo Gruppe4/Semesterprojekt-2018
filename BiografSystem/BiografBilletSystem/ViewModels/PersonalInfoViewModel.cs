@@ -16,7 +16,7 @@ namespace BiografBilletSystem.ViewModels
         public PersonalInfoViewModel()
         {
             _kunde = new Kunde("(Navn)", "(Addresse)","(Email)", 0000, 00000000, new List<int>());
-            _betaling = new Betaling(0,000,new DateTime(),"Navn på kortholder");
+            _betaling = new Betaling(0,000,new DateTime(),"(Navn på kortholder)");
         }
 
         public Kunde Kunde
