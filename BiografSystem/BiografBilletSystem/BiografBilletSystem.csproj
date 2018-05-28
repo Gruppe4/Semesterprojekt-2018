@@ -98,6 +98,7 @@
     <Compile Include="Models\Betaling.cs" />
     <Compile Include="Models\Biograf.cs" />
     <Compile Include="Models\Bookinger.cs" />
+    <Compile Include="Models\Billettype.cs" />
     <Compile Include="Models\Factory.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\Forestilling.cs" />
