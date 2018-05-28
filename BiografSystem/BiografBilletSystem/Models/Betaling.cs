@@ -23,13 +23,13 @@ namespace BiografBilletSystem
             Kortholder = kortholder;
         }
 
-        public void TotalPris(int mængde)
+        public void TotalPris(int børnMængde, int voksenMængde, int seniorMængde)
         {
             Billettype.MedlemsskabOverride();
 
-            var totalPris = (Billettype.BørneBillet * mængde) +
-                            (Billettype.VoksenBillet * mængde) +
-                            (Billettype.SeniorBillet * mængde);
+            var totalPris = (Billettype.BørneBillet * børnMængde) +
+                            (Billettype.VoksenBillet * voksenMængde) +
+                            (Billettype.SeniorBillet * seniorMængde);
         }
 
     }
