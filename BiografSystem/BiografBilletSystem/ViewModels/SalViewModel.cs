@@ -8,6 +8,7 @@ namespace BiografBilletSystem.ViewModels
     {
         private Sal _sal;
         private Bookinger _bookingList;
+        private List<Sæde> _valgteSæder;
 
         public SalViewModel(Sal sal, Bookinger bookingList)
         {
@@ -34,6 +35,12 @@ namespace BiografBilletSystem.ViewModels
                 }
                 return sædeList;
             }
+        }
+
+        public List<Sæde> ValgteSæder
+        {
+            get { return _valgteSæder; }
+            set { _valgteSæder = value; }
         }
 
 

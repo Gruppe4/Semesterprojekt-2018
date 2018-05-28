@@ -10,7 +10,7 @@
     <Page.DataContext>
         <viewModels:ForestillingViewModel/>
     </Page.DataContext>
-    <StackPanel>
+    
 
 <StackPanel>
 
@@ -18,8 +18,9 @@
         <Image Source="Images/Lærred.JPG" Height="100" Width="900" HorizontalAlignment="Center"/>
     </StackPanel>
             <GridView HorizontalAlignment="Center" Height="500" Width="1200" 
-              Margin="50, 50, 50, 50"
-              ItemsSource="{Binding SalViewModel.SædeList}">
+              Margin="50, 50, 50, 0"
+              ItemsSource="{Binding SalViewModel.SædeList}"
+                      SelectionMode="Multiple">
                 <GridView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapGrid MaximumRowsOrColumns="{Binding SalViewModel.Sal.SæderPrRække}"
@@ -35,13 +36,21 @@
 
 
     </GridView>
+        <StackPanel Orientation="Horizontal">
             <Button Content="Tilbage"
                     HorizontalAlignment="Left"
                     Margin="30,5,5,5"
                     VerticalAlignment="Top"
                     Click="Button_navigation_back"
                     Width="100" />
+            <Button Content="Reserver"
+                    HorizontalAlignment="Left"
+                    Margin="930,5,5,5"
+                    VerticalAlignment="Top"
+                    Click="Button_navigation_reserver"
+                    Width="100" />
         </StackPanel>
-    </StackPanel>
+        </StackPanel>
+    
 
 </Page>

@@ -18,5 +18,9 @@ namespace BiografBilletSystem.Views
         {
             this.Frame.Navigate(typeof(MainPage), null);
         }
+        public void Button_navigation_reserver(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PersonalInfoPage), null);
+        }
     }
 }
