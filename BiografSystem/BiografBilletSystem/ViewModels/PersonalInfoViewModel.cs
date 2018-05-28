@@ -10,13 +10,21 @@ namespace BiografBilletSystem.ViewModels
 {
     class PersonalInfoViewModel : INotifyPropertyChanged
     {
-        public Kunde _kunde;
-        public Betaling _betaling;
+        private Kunde _kunde;
+        private Betaling _betaling;
+        private ForestillingViewModel _valgteForestillingViewModel;
 
         public PersonalInfoViewModel()
         {
-            _kunde = new Kunde("(Navn)", "(Addresse)","(Email)", 0000, 00000000, new List<int>());
+            _kunde = new Kunde("(Navn)", "(Addresse)","(Email)", 0000, 00000000, new List<Sæde>());
             _betaling = new Betaling(0,000,new DateTime(),"(Navn på kortholder)");
+            _valgteForestillingViewModel = ForestillingViewModel.Instance;
+            _kunde.BestilteSæder = _valgteForestillingViewModel.SalViewModel.ValgteSæder;
+            }
+
+        public ForestillingViewModel ForestillingViewModel
+        {
+            get { return _valgteForestillingViewModel; }
         }
 
         public Kunde Kunde

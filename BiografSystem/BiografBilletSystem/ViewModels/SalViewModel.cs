@@ -19,7 +19,7 @@ namespace BiografBilletSystem.ViewModels
                 sæde.Checked = false;
             }
 
-            _valgteSæder = ValgteSæder;
+            _valgteSæder = new List<Sæde>();
         }
         public Sal Sal
         {
@@ -34,9 +34,15 @@ namespace BiografBilletSystem.ViewModels
                 
                 for (int i = 0; i < _bookingList.AlleKunder.Count; i++)
                 {
-                    for (int j = 0; j < _bookingList.AlleKunder[i].BestiltSædeIndex.Count; j++)
+                    foreach (var a in _bookingList.AlleKunder[i].BestilteSæder)
                     {
-                        _sædeList[_bookingList.AlleKunder[i].BestiltSædeIndex[j]].Reserveret = true;
+                        foreach (var b in _sædeList)
+                        {
+                            if (b.Nummer == a.Nummer && b.RækkeNr == a.RækkeNr)
+                            {
+                                b.Reserveret = true;
+                            }
+                        }
                     }
                 }
                 return _sædeList;
@@ -47,6 +53,7 @@ namespace BiografBilletSystem.ViewModels
         {
             get
             {
+                _valgteSæder.Clear();
                 foreach (var sæde in SædeList)
                 {
                     if (sæde.Checked)

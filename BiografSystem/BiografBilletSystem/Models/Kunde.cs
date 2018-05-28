@@ -14,10 +14,11 @@ namespace BiografBilletSystem.Models
         public bool Medlem { get; set; }
         public Betaling Betaling { get; set; }
 
-        public List<int> BestiltSædeIndex = new List<int>();
+        //public List<int> BestiltSædeIndex { get; set; }
+        public List<Sæde> BestilteSæder { get; set; }
 
         public Kunde(string navn, string adresse, string email,
-             int postNummer, int tlfNr, List<int> bestilteSæder)
+             int postNummer, int tlfNr, List<Sæde> bestilteSæder)
         {
             Navn = navn;
             Adresse = adresse;
@@ -25,7 +26,7 @@ namespace BiografBilletSystem.Models
             PostNummer = postNummer;
             TlfNr = tlfNr;
             Medlem = false;
-            BestiltSædeIndex = bestilteSæder;
+            BestilteSæder = bestilteSæder;
             Betaling = new Betaling(1111111111111111, 111, DateTime.Now, "navn");
         }
     }

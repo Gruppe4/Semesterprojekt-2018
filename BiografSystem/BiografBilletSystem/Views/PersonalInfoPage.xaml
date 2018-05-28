@@ -33,7 +33,6 @@
     <TextBlock Text="Er du medlem?" Height="30" Width="200" Margin="10, 10, 10, 10"/>
 <ToggleSwitch HorizontalAlignment="Center"/>          
     </StackPanel>
-
         </GridView>
 
         

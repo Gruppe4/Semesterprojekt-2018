@@ -17,7 +17,7 @@
     <StackPanel Orientation="Horizontal" Margin="10,10,10,10" HorizontalAlignment="Center">
         <Image Source="Images/Lærred.JPG" Height="100" Width="900" HorizontalAlignment="Center"/>
     </StackPanel>
-            <GridView HorizontalAlignment="Center" Height="500" Width="1200" 
+            <GridView HorizontalAlignment="Center" Height="auto" Width="auto" 
               Margin="50, 50, 50, 0"
               ItemsSource="{Binding SalViewModel.SædeList}">
                 <GridView.ItemsPanel>
@@ -36,6 +36,7 @@
                                    Width="25"
                                    Source="{Binding SædeUri}" Margin="0,0,0,0"></Image>
                             <CheckBox Visibility="{Binding CheckBox}" IsChecked="{Binding Checked, Mode=TwoWay}" Margin="15,0,0,0"/>
+                            <TextBlock Text="{Binding Nummer}"></TextBlock>
                         </Grid>
                 
                     </DataTemplate>
@@ -45,14 +46,14 @@
     </GridView>
         <StackPanel Orientation="Horizontal">
             <Button Content="Tilbage"
-                    HorizontalAlignment="Left"
-                    Margin="30,5,5,5"
+                    HorizontalAlignment="Center"
+                    Margin="130,5,5,5"
                     VerticalAlignment="Top"
                     Click="Button_navigation_back"
                     Width="100" />
             <Button Content="Reserver"
-                    HorizontalAlignment="Left"
-                    Margin="930,5,5,5"
+                    HorizontalAlignment="Center"
+                    Margin="830,5,5,5"
                     VerticalAlignment="Top"
                     Click="Button_navigation_reserver"
                     Width="100" />

@@ -21,7 +21,10 @@ namespace BiografBilletSystem.Views
         }
         public void Button_navigation_reserver(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(PersonalInfoPage), new RoutedEventArgs());
+            if (ForestillingViewModel.Instance.SalViewModel.ValgteSæder.Count > 0)
+            {
+                this.Frame.Navigate(typeof(PersonalInfoPage), new RoutedEventArgs());
+            }
         }
     }
 }

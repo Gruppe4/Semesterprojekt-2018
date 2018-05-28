@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace BiografBilletSystem.Models
 {
@@ -45,29 +46,29 @@ namespace BiografBilletSystem.Models
         }
         public int SædeNummer(int index)
         {
-            index = index % _rækker + 1;
-            int sæderPrRække = ((_sæder / _rækker));
-            if (sæderPrRække % 2 == 0)
+            index = (index % SæderPrRække);
+            if (SæderPrRække % 2 == 0)
             {
-                if (index < sæderPrRække / 2)
+                if (index < SæderPrRække / 2)
                 {
-                    return (sæderPrRække - index * 2 - 2);
+                    return Math.Abs(SæderPrRække - index * 2 - 2);
                 }
                 else
                 {
-                    return (index - (sæderPrRække + 1) % index);
-
+                    index++;
+                    return (index - (SæderPrRække + 1) % index);
                 }
             }
             else
             {
-                if (index < sæderPrRække / 2)
+                if (index < SæderPrRække / 2)
                 {
-                    return ((sæderPrRække - 1) - index * 2 - 2);
+                    return ((SæderPrRække - 1) - index * 2 - 2);
                 }
                 else
                 {
-                    return (index - sæderPrRække % index);
+                    index++;
+                    return (index - SæderPrRække % index);
 
                 }
             }
@@ -80,7 +81,7 @@ namespace BiografBilletSystem.Models
 
         public int SædeRække(int index)
         {
-            return index / _rækker;
+            return index / SæderPrRække;
         }
     }
 }
