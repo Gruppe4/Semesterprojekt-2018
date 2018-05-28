@@ -25,10 +25,10 @@
     <TextBox Text="{Binding Kunde.Email, Mode=TwoWay}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
 
     <TextBlock Text="Postnummer" Height="30" Width="200" Margin="10, 10, 10, 10"/>
-    <TextBox Text="{Binding Kunde.PostNummer, Mode=TwoWay}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
+    <TextBox Text="{Binding Kunde.PostNummer, Mode=TwoWay}" MaxLength="4" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2" TextChanged="TextBox_TextChanged"/>
 
     <TextBlock Text="Telefon nummer" Height="30" Width="200" Margin="10, 10, 10, 10"/>
-    <TextBox Text="{Binding Kunde.TlfNr, Mode=TwoWay}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
+    <TextBox Text="{Binding Kunde.TlfNr, Mode=TwoWay}" MaxLength="8" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
 
     <TextBlock Text="Er du medlem?" Height="30" Width="200" Margin="10, 10, 10, 10"/>
 <ToggleSwitch HorizontalAlignment="Center"/>          
