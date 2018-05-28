@@ -23,21 +23,25 @@
                 <GridView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapGrid MaximumRowsOrColumns="{Binding SalViewModel.Sal.SæderPrRække}"
-                                  Orientation="Horizontal"
-                                  HorizontalChildrenAlignment="Stretch"
-                                  VerticalChildrenAlignment="Stretch">
+                                  Orientation="Horizontal">
                         </WrapGrid>
                     </ItemsPanelTemplate>
                 </GridView.ItemsPanel>
                 <GridView.ItemTemplate>
             <DataTemplate>
-                <Image Height="Auto" Width="Auto" Source="{Binding SædeUri}"></Image>
+                <Image Height="25" Width="25" Source="{Binding SædeUri}"></Image>
             </DataTemplate>
         </GridView.ItemTemplate>
 
 
     </GridView>
-</StackPanel>
+            <Button Content="Tilbage"
+                    HorizontalAlignment="Left"
+                    Margin="30,5,5,5"
+                    VerticalAlignment="Top"
+                    Click="Button_navigation_back"
+                    Width="100" />
+        </StackPanel>
     </StackPanel>
 
 </Page>

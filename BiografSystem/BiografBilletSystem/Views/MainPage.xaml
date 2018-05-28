@@ -15,24 +15,30 @@
                 VerticalAlignment="Top"
                 Width="auto"
                 Orientation="Horizontal">
-        <ListView HorizontalAlignment="Left"
-                  Name="FilmListView"
-                  Width="190"
-                  Height="880"
-                  Margin="50,0,50,0"
-                  ItemsSource="{Binding AlleFilm}"
-                  SelectedItem="{Binding SelectedFilm, Mode=TwoWay}">
+        <StackPanel Width="250">
+            <ListView HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Name="FilmListView"
+                      Width="190"
+                      Height="600"
+                      Margin="50,0,50,0"
+                      ItemsSource="{Binding AlleFilm}"
+                      SelectedItem="{Binding SelectedFilm, Mode=TwoWay}">
 
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10" BorderBrush="Black">
-                        <TextBlock Text="{Binding Titel}"/>
-                        <TextBlock Text="{Binding Genre}"/>
-                        <TextBlock Text="{Binding Spilletid}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical"
+                                    Margin="10, 10, 10, 10"
+                                    BorderBrush="Black">
+                            <TextBlock Text="{Binding Titel}" />
+                            <TextBlock Text="{Binding Genre}" />
+                            <TextBlock Text="{Binding Spilletid}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        
 
 
         <GridView HorizontalAlignment="Left"

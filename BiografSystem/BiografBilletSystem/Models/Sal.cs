@@ -10,7 +10,7 @@ namespace BiografBilletSystem.Models
         List<Sæde> _sædeList = new List<Sæde>();
         private int _salNr;
         public static int salInstance = 1;
-        public int SæderPrRække { get; private set; }
+        public int SæderPrRække { get; set; }
 
         public Sal(int sæderPrRække, int rækker)
         {
