@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace BiografBilletSystem.Models
 {
@@ -11,6 +12,7 @@ namespace BiografBilletSystem.Models
         public int PostNummer { get; set; }
         public int TlfNr { get; set; }
         public bool Medlem { get; set; }
+        public Betaling Betaling { get; set; }
 
         public List<int> BestiltSædeIndex = new List<int>();
 
@@ -24,7 +26,7 @@ namespace BiografBilletSystem.Models
             TlfNr = tlfNr;
             Medlem = false;
             BestiltSædeIndex = bestilteSæder;
+            Betaling = new Betaling(1111111111111111, 111, DateTime.Now, "navn");
         }
-
     }
 }

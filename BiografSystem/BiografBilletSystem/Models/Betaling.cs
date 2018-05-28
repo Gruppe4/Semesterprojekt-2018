@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace BiografBilletSystem
 {
-    class Betaling
+    public class Betaling
     {
-        public int Kortnummer { get; set; }
+        public long Kortnummer { get; set; }
         public int Kontrolcifre { get; set; }
         public DateTime Udløbsdato { get; set; }
         public string Kortholder { get; set; }
 
-        public Betaling(int kortnummer, int kontrolcifre, DateTime udløbsdato, string kortholder)
+        public Betaling(long kortnummer, int kontrolcifre, DateTime udløbsdato, string kortholder)
         {
             Kortnummer = kortnummer;
             Kontrolcifre = kontrolcifre;

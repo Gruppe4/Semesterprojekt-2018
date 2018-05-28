@@ -8,6 +8,7 @@ namespace BiografBilletSystem.Models
 
         public Bookinger()
         {
+            
         }
 
         public List<Kunde> AlleKunder { get; set; } = new List<Kunde>();
