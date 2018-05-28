@@ -29,5 +29,7 @@ namespace BiografBilletSystem.Models
             BestilteSæder = bestilteSæder;
             Betaling = new Betaling(1111111111111111, 111, DateTime.Now, "navn");
         }
+
+
     }
 }
