@@ -25,9 +25,11 @@ namespace BiografBilletSystem
 
         public void TotalPris(int mængde)
         {
-            (Billettype.BørneBillet * mængde) +
-                (Billettype.VoksenBillet * mængde) +
-                (Billettype.SeniorBillet * mængde)
+            Billettype.MedlemsskabOverride();
+
+            var totalPris = (Billettype.BørneBillet * mængde) +
+                            (Billettype.VoksenBillet * mængde) +
+                            (Billettype.SeniorBillet * mængde);
         }
 
     }
