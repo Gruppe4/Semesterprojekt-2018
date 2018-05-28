@@ -8,21 +8,36 @@ namespace BiografBilletSystem.Models
 {
     class Billettype
     {
-
+        private bool _medlemsskab;
         public int BørneBillet { get; private set; }
 
         public int VoksenBillet { get; private set; }
 
         public int SeniorBillet { get; private set; }
 
-        public int Medlemsskab { get; private set; }
+        public bool Medlemsskab
+        {
+            get { return _medlemsskab; }
+            set { value = _medlemsskab; }
+        }
+ 
+        
 
-        public Billettype(int børneBillet, int voksenBillet, int seniorBillet, int medlemsskab)
+        public Billettype()
         {
             BørneBillet = 70;
             VoksenBillet = 100;
             SeniorBillet = 70;
-            Medlemsskab = 80;
+            _medlemsskab = false;
         }
+
+        public void MedlemsskabOverride()
+        {
+            if (Medlemsskab == true)
+            {
+                VoksenBillet = 80;
+            }
+        }
+        
     }
 }
