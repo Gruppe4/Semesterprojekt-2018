@@ -56,12 +56,14 @@ namespace BiografBilletSystem.Models
 
         public static List<Sal> PopulateSale()
         {
-            List<Sal> salListe = new List<Sal>() { new Sal(30, 22),
-                new Sal(20, 13),
-                new Sal(19, 12),
-                new Sal(18, 11),
-                new Sal(15, 10),
-                new Sal(15, 10) };           
+            List<Sal> salListe = new List<Sal>()
+            { 
+                new Sal(18, 10),
+                new Sal(18, 9),
+                new Sal(16, 9),
+                new Sal(15, 8),
+                new Sal(15, 7)
+            };           
             return salListe;
         }
 
