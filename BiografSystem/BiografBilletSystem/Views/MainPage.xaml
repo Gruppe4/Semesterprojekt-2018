@@ -10,6 +10,7 @@
     <Page.DataContext>
         <viewModels:MainViewModel />
     </Page.DataContext>
+    <ScrollViewer>
     <StackPanel HorizontalAlignment="Left"
                 Height="auto"
                 VerticalAlignment="Top"
@@ -105,4 +106,5 @@
         </StackPanel>
 
     </StackPanel>
+    </ScrollViewer>
 </Page>

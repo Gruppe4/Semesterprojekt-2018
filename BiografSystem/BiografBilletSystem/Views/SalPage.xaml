@@ -11,7 +11,7 @@
         <viewModels:ForestillingViewModel/>
     </Page.DataContext>
     
-
+<ScrollViewer>
 <StackPanel>
 
     <StackPanel Orientation="Horizontal" Margin="10,10,10,10" HorizontalAlignment="Center">
@@ -24,7 +24,8 @@
                 <GridView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapGrid MaximumRowsOrColumns="{Binding SalViewModel.Sal.SæderPrRække}"
-                                  Orientation="Horizontal">
+                                  Orientation="Horizontal"
+                                  >
                         </WrapGrid>
                     </ItemsPanelTemplate>
                 </GridView.ItemsPanel>
@@ -51,6 +52,7 @@
                     Width="100" />
         </StackPanel>
         </StackPanel>
+</ScrollViewer>
     
 
 </Page>
