@@ -1,5 +1,6 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using BiografBilletSystem.ViewModels;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -20,7 +21,7 @@ namespace BiografBilletSystem.Views
         }
         public void Button_navigation_reserver(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(PersonalInfoPage), null);
+            this.Frame.Navigate(typeof(PersonalInfoPage), new RoutedEventArgs());
         }
     }
 }

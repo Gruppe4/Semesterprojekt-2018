@@ -17,7 +17,7 @@ namespace BiografBilletSystem.ViewModels
 
         public MainViewModel()
         {
-            _biograf = new Biograf();
+            _biograf = Biograf.Instance;
             _selectedFilm = null;
             _forestillingsListe = _biograf.AlleForestillinger;
             selectedForestilling = _forestillingsListe[0];
