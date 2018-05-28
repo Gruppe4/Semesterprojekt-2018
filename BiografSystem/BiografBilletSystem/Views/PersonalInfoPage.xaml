@@ -5,9 +5,40 @@
     xmlns:local="using:BiografBilletSystem"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:BiografBilletSystem.ViewModels"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <viewModels:PersonalInfoViewModel />
+    </Page.DataContext>
+    
+    <StackPanel Orientation=" Horizontal">
+        <GridView HorizontalAlignment="Left" Height="710" Width="650">
+<StackPanel Width=" 650" Height="710">
+<TextBlock Text="Navn" Height="30" Width="200" Margin="10, 10, 10, 10"/>
+                <TextBox Text="{Binding Kunde.Navn}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
 
-    </Grid>
+    <TextBlock Text="Addresse" Height="30" Width="200" Margin="10, 10, 10, 10"/>
+    <TextBox Text="{Binding Kunde.Adresse}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
+
+    <TextBlock Text="Email" Height="30" Width="200" Margin="10, 10, 10, 10"/>
+    <TextBox Text="{Binding Kunde.Email}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
+
+    <TextBlock Text="Postnummer" Height="30" Width="200" Margin="10, 10, 10, 10"/>
+    <TextBox Text="{Binding Kunde.PostNummer}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
+
+    <TextBlock Text="Telefon nummer" Height="30" Width="200" Margin="10, 10, 10, 10"/>
+    <TextBox Text="{Binding Kunde.TlfNr}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
+
+    <TextBlock Text="Er du medlem?" Height="30" Width="200" Margin="10, 10, 10, 10"/>
+    <ToggleButton HorizontalAlignment="Center" Width="50" Height="30"/>
+                <!--<TextBlock Text="Dine sæder" Height="30" Width="50" Margin="10, 10, 10, 10"/>
+    <TextBox Text="{Binding Kunde.}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>-->
+            </StackPanel>
+
+        </GridView>
+
+    
+
+    </StackPanel>
 </Page>
