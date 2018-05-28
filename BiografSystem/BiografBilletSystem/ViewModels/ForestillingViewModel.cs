@@ -12,11 +12,21 @@ namespace BiografBilletSystem.ViewModels
     {
         private Forestilling _forestilling;
         private SalViewModel _salViewModel;
+        private static ForestillingViewModel _instance;
+        public static ForestillingViewModel Instance
+        {
+            get
+            {
+                _instance = _instance ?? (_instance = new ForestillingViewModel());
+                return _instance;
+            }
+        }
 
         public ForestillingViewModel()
         {
             _forestilling = MainViewModel.selectedForestilling;
             _salViewModel = new SalViewModel(_forestilling.Sal, _forestilling.AlleBookinger);
+            _instance = this;
         }
 
         public Forestilling Forestilling

@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using BiografBilletSystem.Models;
+﻿using BiografBilletSystem.Models;
+using System.Collections.Generic;
 
 namespace BiografBilletSystem.ViewModels
 {
@@ -9,11 +8,18 @@ namespace BiografBilletSystem.ViewModels
         private Sal _sal;
         private Bookinger _bookingList;
         private List<Sæde> _valgteSæder;
+        private List<Sæde> _sædeList;
 
         public SalViewModel(Sal sal, Bookinger bookingList)
         {
             _sal = sal;
             _bookingList = bookingList;
+            foreach (var sæde in Sal.SædeList)
+            {
+                sæde.Checked = false;
+            }
+
+            _valgteSæder = ValgteSæder;
         }
         public Sal Sal
         {
@@ -24,23 +30,32 @@ namespace BiografBilletSystem.ViewModels
         {
             get
             {
-                List<Sæde> sædeList = new List<Sæde>();
-                sædeList = Sal.SædeList;
+                _sædeList = Sal.SædeList;
+                
                 for (int i = 0; i < _bookingList.AlleKunder.Count; i++)
                 {
                     for (int j = 0; j < _bookingList.AlleKunder[i].BestiltSædeIndex.Count; j++)
                     {
-                        sædeList[_bookingList.AlleKunder[i].BestiltSædeIndex[j]].Reserveret = true;
+                        _sædeList[_bookingList.AlleKunder[i].BestiltSædeIndex[j]].Reserveret = true;
                     }
                 }
-                return sædeList;
+                return _sædeList;
             }
         }
 
         public List<Sæde> ValgteSæder
         {
-            get { return _valgteSæder; }
-            set { _valgteSæder = value; }
+            get
+            {
+                foreach (var sæde in SædeList)
+                {
+                    if (sæde.Checked)
+                    {
+                        _valgteSæder.Add(sæde);
+                    }
+                }
+                return _valgteSæder;
+            }
         }
 
 
