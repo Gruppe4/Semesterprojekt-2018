@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BiografBilletSystem.Models
 {
-    class Billettype
+    public class Billettype
     {
         private bool _medlemsskab;
         public int BørneBillet { get; private set; }
