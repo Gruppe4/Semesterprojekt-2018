@@ -6,15 +6,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:BiografBilletSystem.ViewModels"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+      Width="1280"
+      Height="720">
 
     <Page.DataContext>
         <viewModels:PersonalInfoViewModel />
     </Page.DataContext>
-    
-    <StackPanel Orientation=" Horizontal">
-        <GridView HorizontalAlignment="Left" Height="710" Width="620" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2">
-<StackPanel Width=" 620" Height="710">
+
+    <StackPanel Orientation=" Horizontal"
+                BorderBrush="Black"
+                BorderThickness="2">
+        <StackPanel Width=" 620"
+                        Height="710"
+                        BorderBrush="Black"
+                        BorderThickness="2">
 <TextBlock Text="Navn" Height="30" Width="200" Margin="10, 10, 10, 10"/>
                 <TextBox Text="{Binding Kunde.Navn, Mode=TwoWay}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
 
@@ -25,19 +31,24 @@
     <TextBox Text="{Binding Kunde.Email, Mode=TwoWay}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
 
     <TextBlock Text="Postnummer" Height="30" Width="200" Margin="10, 10, 10, 10"/>
-    <TextBox Text="{Binding Kunde.PostNummer, Mode=TwoWay}" MaxLength="4" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2" TextChanged="TextBox_TextChanged"/>
+    <TextBox Text="{Binding Kunde.PostNummer, Mode=TwoWay}" MaxLength="4" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
 
     <TextBlock Text="Telefon nummer" Height="30" Width="200" Margin="10, 10, 10, 10"/>
     <TextBox Text="{Binding Kunde.TlfNr, Mode=TwoWay}" MaxLength="8" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
 
     <TextBlock Text="Er du medlem?" Height="30" Width="200" Margin="10, 10, 10, 10"/>
-<ToggleSwitch HorizontalAlignment="Center"/>          
-    </StackPanel>
-        </GridView>
-
-        
-            <GridView HorizontalAlignment="Right" Height="710" Width="620" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2">
-                <StackPanel Height="710" Width="620">
+<ToggleSwitch HorizontalAlignment="Center" IsOn="{Binding Kunde.Betaling.Billet.Medlemsskab, Mode=TwoWay}" OffContent="Nej" OnContent="Ja"/>
+            <Button Content="Tilbage"
+                    Width="100"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Click="Button_navigation_tilbage" />
+        </StackPanel>
+            
+            <StackPanel Height="710"
+                        Width="650"
+                        BorderBrush="Black"
+                        BorderThickness="2">
             <TextBlock Text="Kortholder" Height="30" Width="200" Margin="10, 10, 10, 10"/>
     <TextBox Text="{Binding Betaling.Kortholder, Mode=TwoWay}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
 
@@ -51,10 +62,46 @@
 
                 <TextBlock Text="Kontrolcifre" Height="30" Width="200" Margin="10, 10, 10, 0" />
                     <TextBox Text="{Binding Betaling.Kontrolcifre, Mode=TwoWay}" Height="30" Width="30" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2" MaxLength="3"/>
+            <StackPanel Orientation="Vertical"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        Margin="0,20,0,0"
+                        Height="310"
+                        Width="650">
+                
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                        <TextBlock Text="Voksen Billeter:     "
+                                   Width="118" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock Text="{Binding VoksenBilleter}"
+                                   Width="50"></TextBlock>
+                    </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                        <TextBlock Text="Børne Billeter:  "
+                                   Width="100"
+                                   HorizontalAlignment="Left"></TextBlock>
+                        <ComboBox ItemsSource="{Binding BørneList, Mode=TwoWay}"
+                                  SelectedItem="{Binding BørneBilleter, Mode=TwoWay}" />
+                    </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                        <TextBlock Text="Senior Billeter:  "
+                                   Width="100"
+                                   HorizontalAlignment="Left"></TextBlock>
+                        <ComboBox ItemsSource="{Binding SeniorList, Mode=TwoWay}"
+                                  SelectedItem="{Binding SeniorBilleter, Mode=TwoWay}"/>
+                    </StackPanel>
+                <Button Content="Betal"
+                        Margin="0,106,0,0"
+                        Width="100"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Click="Button_navigation_kvittering" />
 
             </StackPanel>
-        </GridView>
-  
+            
+
+            </StackPanel>
 
 
     </StackPanel>

@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml.Controls;
+﻿using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -14,9 +15,13 @@ namespace BiografBilletSystem.Views
             this.InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        public void Button_navigation_kvittering(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(KvitteringPage), null);
+        }
+        public void Button_navigation_tilbage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SalPage), null);
         }
     }
 }

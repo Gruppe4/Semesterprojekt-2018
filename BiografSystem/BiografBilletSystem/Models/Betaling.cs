@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BiografBilletSystem.Models;
+﻿using BiografBilletSystem.Models;
+using System;
 
 namespace BiografBilletSystem
 {
@@ -13,7 +9,7 @@ namespace BiografBilletSystem
         public int Kontrolcifre { get; set; }
         public DateTime Udløbsdato { get; set; }
         public string Kortholder { get; set; }
-        public Billettype Billettype { get; set; }
+        public Billettype Billet { get; set; }
 
         public Betaling(long kortnummer, int kontrolcifre, DateTime udløbsdato, string kortholder)
         {
@@ -21,16 +17,7 @@ namespace BiografBilletSystem
             Kontrolcifre = kontrolcifre;
             Udløbsdato = udløbsdato;
             Kortholder = kortholder;
+            Billet = new Billettype();
         }
-
-        public void TotalPris(int børnMængde, int voksenMængde, int seniorMængde)
-        {
-            Billettype.MedlemsskabOverride();
-
-            var totalPris = (Billettype.BørneBillet * børnMængde) +
-                            (Billettype.VoksenBillet * voksenMængde) +
-                            (Billettype.SeniorBillet * seniorMængde);
-        }
-
     }
 }

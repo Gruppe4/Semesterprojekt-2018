@@ -1,43 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BiografBilletSystem.Models
+﻿namespace BiografBilletSystem.Models
 {
     public class Billettype
     {
-        private bool _medlemsskab;
-        public int BørneBillet { get; private set; }
+        public int BørneBillet { get; set; }
 
-        public int VoksenBillet { get; private set; }
+        public int VoksenBillet { get; set; }
 
-        public int SeniorBillet { get; private set; }
+        public int SeniorBillet { get; set; }
 
-        public bool Medlemsskab
+        public bool Medlemsskab { get; set; }
+
+        public int RabatBillet
         {
-            get { return _medlemsskab; }
-            set { value = _medlemsskab; }
+            get { return BørneBillet + SeniorBillet; }
         }
- 
-        
+
+
 
         public Billettype()
         {
-            BørneBillet = 70;
-            VoksenBillet = 100;
-            SeniorBillet = 70;
-            _medlemsskab = false;
+            BørneBillet = 0;
+            VoksenBillet = 0;
+            SeniorBillet = 0;
+            Medlemsskab = false;
         }
 
-        public void MedlemsskabOverride()
+        public int Pris()
         {
-            if (Medlemsskab == true)
-            {
-                VoksenBillet = 80;
-            }
+            int pris = RabatBillet * 70;
+            pris = Medlemsskab ? pris + VoksenBillet * 80 : pris + VoksenBillet * 100;
+            return pris;
         }
-        
     }
 }
