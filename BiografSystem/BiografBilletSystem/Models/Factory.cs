@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using Windows.UI.Xaml.Controls;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace BiografBilletSystem.Models
 {
     static class Factory
     {
-
+        
         public static List<Film> PopulateFilms()
         {
             List<Film> filmListe = new List<Film>()
@@ -93,10 +95,38 @@ namespace BiografBilletSystem.Models
             return forestillingsListe;
         }
 
+        public static List<Sæde> TilfældigSædeList()
+        {
+            Random rng = new Random();
+            List<Sæde> sædeList = new List<Sæde>();
+            int bookinger = rng.Next(5, 15);
+            for (int i = 0; i < bookinger; i++)
+            {
+                int række = rng.Next(1, 7);
+                int nummer = rng.Next(0, 15);
+                int antal = rng.Next(5);
+                sædeList.Add(new Sæde(række, nummer));
+                for (int y = 1; y <= antal; y++)
+                {
+                    if (y % 2 == 0)
+                    {
+                        sædeList.Add(new Sæde(række, nummer + 2 * (y / 2)));
+                    }
+                    else
+                    {
+                        sædeList.Add(new Sæde(række, nummer - 2 * (y / 2)));
+                    }
+                }
+            }
+
+            return sædeList;
+        }
         public static List<Kunde> PopulateBookingList()
         {
+            Task.Delay(20).Wait();
             List<Kunde> kundeListe = new List<Kunde>();
-            kundeListe.Add(new Kunde("TestName", "TestAdress", "TestEmail", 1111, 11111111, new List<Sæde>(){new Sæde(3,2), new Sæde(3, 1), new Sæde(3, 0) }));
+            kundeListe.Add(new Kunde("TestName", "TestAdress", "TestEmail", 1111, 11111111, TilfældigSædeList()));
+            
             return kundeListe;
         }
     }
