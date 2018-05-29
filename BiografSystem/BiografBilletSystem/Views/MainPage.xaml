@@ -11,100 +11,132 @@
         <viewModels:MainViewModel />
     </Page.DataContext>
     <ScrollViewer>
-    <StackPanel HorizontalAlignment="Left"
-                Height="auto"
-                VerticalAlignment="Top"
-                Width="auto"
-                Orientation="Horizontal">
-        <StackPanel Width="250">
-            <ListView HorizontalAlignment="Left"
-                      VerticalAlignment="Top"
-                      Name="FilmListView"
-                      Width="190"
-                      Height="600"
-                      Margin="50,0,50,0"
-                      ItemsSource="{Binding AlleFilm}"
-                      SelectedItem="{Binding SelectedFilm, Mode=TwoWay}">
+        <StackPanel HorizontalAlignment="Left"
+                    Height="auto"
+                    VerticalAlignment="Top"
+                    Width="auto"
+                    Orientation="Horizontal">
+            <StackPanel Width="270">
+                <TextBlock Text="Ctrl-Click for at fravælge Film" HorizontalAlignment="Center"
+                               Margin="20,20,0,0" Width="auto"></TextBlock>
+                    <ListView HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Name="FilmListView"
+                          Width="250"
+                          Height="400"
+                          Margin="10,0,0,0"
+                          ItemsSource="{Binding AlleFilm}"
+                          SelectedItem="{Binding SelectedFilm, Mode=TwoWay}">
 
-                <ListView.ItemTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical"
+                                        Margin="10, 10, 10, 10"
+                                        BorderBrush="Black">
+                                <TextBlock Text="{Binding Titel}" />
+                                <TextBlock Text="{Binding Genre}" />
+                                <TextBlock Text="{Binding Spilletid}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackPanel>
+
+            <GridView HorizontalAlignment="Left"
+                      Width="600"
+                      Height="880"
+                      Margin="0,0,50,0"
+                      ItemsSource="{Binding AlleForestillinger}"
+                      SelectedItem="{Binding SelectedForestilling, Mode=TwoWay}">
+                <GridView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical"
                                     Margin="10, 10, 10, 10"
-                                    BorderBrush="Black">
-                            <TextBlock Text="{Binding Titel}" />
-                            <TextBlock Text="{Binding Genre}" />
-                            <TextBlock Text="{Binding Spilletid}" />
+                                    BorderBrush="Black"
+                                    BorderThickness="2">
+
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="10, 10, 10, 10">
+                                <Image Height="250"
+                                       Width="250"
+                                       Source="{Binding Film.BilledeUri}"
+                                       Stretch="Uniform" />
+                            </StackPanel>
+                            <TextBlock Text="{Binding Sal}" />
+                            <TextBlock Text="{Binding StartTid}" />
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Spilletid:" />
+                                <TextBlock Text="{Binding Film.Spilletid}" />
+                            </StackPanel>
                         </StackPanel>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackPanel>
-        
+                </GridView.ItemTemplate>
+            </GridView>
 
+            <StackPanel Width="280"
+                        Height="880">
 
-        <GridView HorizontalAlignment="Left"
-                  Width="600"
-                  Height="880"
-                  Margin="0,0,50,0"
-                  ItemsSource="{Binding AlleForestillinger}"
-                  SelectedItem="{Binding SelectedForestilling, Mode=TwoWay}">
-            <GridView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10"  BorderBrush="Black" BorderThickness="2">
+                <StackPanel Orientation="Vertical"
+                            Margin="10, 10, 10, 10"
+                            Height="auto"
+                            Width="auto">
+                    <TextBlock Text="Titel:"
+                               HorizontalAlignment="Center"
+                               FontStyle="Oblique"
+                               FontWeight="Bold" />
+                    <TextBlock Text="{Binding SelectedForestilling.Film.Titel}" />
 
-                        <StackPanel Orientation="Horizontal" Margin="10, 10, 10, 10">
-                            <Image Height="250"
-                                   Width="250"
-                                   Source="{Binding Film.BilledeUri}"
-                                   Stretch="Uniform" />
-                        </StackPanel>
-                        <TextBlock Text="{Binding Sal}"/>
-                        <TextBlock Text="{Binding StartTid}"/>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Spilletid:"/>
-                            <TextBlock Text="{Binding Film.Spilletid}"/>
-                        </StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </GridView.ItemTemplate>
-        </GridView>
+                    <TextBlock Text="Skuespillere:"
+                               HorizontalAlignment="Center"
+                               FontStyle="Oblique"
+                               FontWeight="Bold" />
+                    <TextBlock Text="{Binding SelectedForestilling.Film.Stjerner}"
+                               TextWrapping="Wrap" />
 
-        <StackPanel Width="280" Height="880">
-            
-            <StackPanel Orientation="Vertical" Margin="10, 10, 10, 10" Height="auto" Width="auto">
-                <TextBlock Text="Titel:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
-                <TextBlock Text="{Binding SelectedForestilling.Film.Titel}"/>
+                    <TextBlock Text="Indstruktør:"
+                               HorizontalAlignment="Center"
+                               FontStyle="Oblique"
+                               FontWeight="Bold" />
+                    <TextBlock Text="{Binding SelectedForestilling.Film.Indstruktør}" />
 
-                <TextBlock Text="Skuespillere:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
-                <TextBlock Text="{Binding SelectedForestilling.Film.Stjerner}" TextWrapping="Wrap"/>
+                    <TextBlock Text="Genre:"
+                               HorizontalAlignment="Center"
+                               FontStyle="Oblique"
+                               FontWeight="Bold" />
+                    <TextBlock Text="{Binding SelectedForestilling.Film.Genre}" />
 
-                <TextBlock Text="Indstruktør:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
-                <TextBlock Text="{Binding SelectedForestilling.Film.Indstruktør}"/>
+                    <TextBlock Text="Resumé:"
+                               HorizontalAlignment="Center"
+                               FontStyle="Oblique"
+                               FontWeight="Bold" />
+                    <TextBlock Text="{Binding SelectedForestilling.Film.Resumé}"
+                               TextWrapping="Wrap" />
 
-                <TextBlock Text="Genre:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
-                <TextBlock Text="{Binding SelectedForestilling.Film.Genre}"/>
+                    <TextBlock Text="Dato:"
+                               HorizontalAlignment="Center"
+                               FontStyle="Oblique"
+                               FontWeight="Bold" />
+                    <TextBlock Text="{Binding SelectedForestilling.Film.Dato}" />
 
-                <TextBlock Text="Resumé:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
-                <TextBlock Text="{Binding SelectedForestilling.Film.Resumé}" TextWrapping="Wrap"/>
+                    <TextBlock Text="Spilletid:"
+                               HorizontalAlignment="Center"
+                               FontStyle="Oblique"
+                               FontWeight="Bold" />
+                    <TextBlock Text="{Binding SelectedForestilling.Film.Spilletid}" />
+                    <Image Height="200"
+                           Width="200"
+                           Source="{Binding SelectedForestilling.Film.BilledeUri}"
+                           Stretch="Uniform" />
 
-                <TextBlock Text="Dato:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
-                <TextBlock Text="{Binding SelectedForestilling.Film.Dato}"/>
-
-                <TextBlock Text="Spilletid:" HorizontalAlignment="Center" FontStyle="Oblique" FontWeight="Bold"/>
-                <TextBlock Text="{Binding SelectedForestilling.Film.Spilletid}"/>
-                <Image Height="200"
-                       Width="200"
-                       Source="{Binding SelectedForestilling.Film.BilledeUri}"
-                       Stretch="Uniform" />
-
+                </StackPanel>
+                <Button Content="Videre"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Click="Button_navigation_sal" />
 
             </StackPanel>
-            <Button Content="Videre"
-                    HorizontalAlignment="Stretch"
-                    VerticalAlignment="Stretch" Click="Button_navigation_sal"/>
 
         </StackPanel>
-
-    </StackPanel>
     </ScrollViewer>
 </Page>

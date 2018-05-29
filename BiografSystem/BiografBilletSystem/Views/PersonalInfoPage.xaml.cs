@@ -1,5 +1,6 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Input;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,5 +24,25 @@ namespace BiografBilletSystem.Views
         {
             this.Frame.Navigate(typeof(SalPage), null);
         }
+
+        
+            public void KeyDown(object sender, KeyRoutedEventArgs e)
+            {
+                if (e.Key.ToString().Equals("Back"))
+                {
+                    e.Handled = false;
+                    return;
+                }
+                for (int i = 0; i < 10; i++)
+                {
+                    if (e.Key.ToString() == string.Format("Number{0}", i))
+                    {
+                        e.Handled = false;
+                        return;
+                    }
+                }
+                e.Handled = true;
+            }
+        
     }
 }
