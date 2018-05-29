@@ -36,13 +36,17 @@ namespace BiografBilletSystem.ViewModels
             {
                 if (SelectedFilm == null)
                 {
-                    SelectedForestilling = _forestillingsListe[0];
-                    return _forestillingsListe;
+                    var forestillingerList = from forestilling in _biograf.AlleForestillinger
+                        orderby forestilling.StartTid
+                        select forestilling;
+                    SelectedForestilling = forestillingerList.First();
+                    return forestillingerList.ToList();
                 }
                 else
                 {
                     var forestillingerList = from forestilling in _biograf.AlleForestillinger
-                        where forestilling.Film.Titel == _selectedFilm.Titel
+                        where forestilling.Film.Titel == SelectedFilm.Titel
+                              orderby forestilling.StartTid
                         select forestilling;
                     SelectedForestilling = forestillingerList.First();
                     return forestillingerList.ToList();
@@ -59,6 +63,8 @@ namespace BiografBilletSystem.ViewModels
                 OnPropertyChanged(nameof(AlleForestillinger));
             }
         }
+
+        
 
         public Forestilling SelectedForestilling
         {
