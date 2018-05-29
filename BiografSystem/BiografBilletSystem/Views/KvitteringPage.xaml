@@ -44,19 +44,19 @@
             </StackPanel>
     <StackPanel Orientation="Horizontal" Height="50">
         <TextBlock Text="Navn:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
-        <TextBlock Text="{Binding Kunde.Navn}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
+        <TextBlock Text="{Binding Kunde.Navn}" HorizontalAlignment="Center" Height="50" Width="500" FontSize="20"/>
 
 
     </StackPanel>
     <StackPanel Orientation="Horizontal" Height="50">
         <TextBlock Text="Email:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
-        <TextBlock Text="{Binding Kunde.Email}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
+        <TextBlock Text="{Binding Kunde.Email}" HorizontalAlignment="Center" Height="50" Width="500" FontSize="20"/>
 
 
     </StackPanel>
     <StackPanel Orientation="Horizontal" Height="50">
         <TextBlock Text="Addresse:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
-        <TextBlock Text="{Binding Kunde.Adresse}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
+        <TextBlock Text="{Binding Kunde.Adresse}" HorizontalAlignment="Center" Height="50" Width="500" FontSize="20"/>
 
 
     </StackPanel>
@@ -68,7 +68,7 @@
     </StackPanel>
     <StackPanel Orientation="Horizontal" Height="50">
         <TextBlock Text="Telefon nr:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
-        <TextBlock Text="{Binding Kunde.TlfNr}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
+        <TextBlock Text="{Binding Kunde.TlfNr}" HorizontalAlignment="Center" Height="50" Width="500" FontSize="20"/>
 
 
     </StackPanel>

@@ -20,6 +20,7 @@ namespace BiografBilletSystem.ViewModels
         {
             _kunde = PersonalInfoViewModel.Instance;
             _forestillingViewModel = ForestillingViewModel.Instance;
+            _forestillingViewModel.Forestilling.AlleBookinger.AlleKunder.Add(_kunde);
         }
 
         public string TakForBestilling
