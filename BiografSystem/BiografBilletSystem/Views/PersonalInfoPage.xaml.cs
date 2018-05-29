@@ -26,7 +26,7 @@ namespace BiografBilletSystem.Views
         }
 
         
-            public void KeyDown(object sender, KeyRoutedEventArgs e)
+            public new void KeyDown(object sender, KeyRoutedEventArgs e)
             {
                 if (e.Key.ToString().Equals("Back"))
                 {

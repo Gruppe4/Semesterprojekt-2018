@@ -13,8 +13,6 @@ namespace BiografBilletSystem.ViewModels
 
         private Kunde _kunde;
         private ForestillingViewModel _forestillingViewModel;
-        private Sæde _sæde;
-        private PersonalInfoViewModel _personalInfoViewModel;
         private int _pris;
         public KvitteringViewModel()
         {

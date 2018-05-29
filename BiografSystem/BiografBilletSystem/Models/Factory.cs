@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Windows.UI.Xaml.Controls;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace BiografBilletSystem.Models
