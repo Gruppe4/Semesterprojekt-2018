@@ -23,17 +23,6 @@ namespace BiografBilletSystem.ViewModels
             _forestillingViewModel.Forestilling.AlleBookinger.AlleKunder.Add(_kunde);
         }
 
-        public string TakForBestilling
-        {
-            get
-            {
-                return
-                    $"Tak for din bestilling{_kunde.Navn}! " +
-                    $"Du har bestilit {_kunde.BestilteSæder} til {_forestillingViewModel.Forestilling}. " +
-                    $"Kopi af regningen er sendt til {_kunde.Email}." +
-                    $"God film!";
-            }
-        }
 
         public Kunde Kunde
         {
@@ -47,6 +36,11 @@ namespace BiografBilletSystem.ViewModels
         public int Pris
         {
             get { return _pris = Kunde.Betaling.Billet.Pris(); }
+        }
+
+        public ForestillingViewModel ForestillingViewModel
+        {
+            get { return _forestillingViewModel; }
         }
 
 
