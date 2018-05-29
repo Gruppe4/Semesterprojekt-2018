@@ -5,13 +5,86 @@
     xmlns:local="using:BiografBilletSystem"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:BiografBilletSystem.ViewModels"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="361*"/>
-            <RowDefinition Height="139*"/>
-        </Grid.RowDefinitions>
+<Page.DataContext>
+    <viewModels:KvitteringViewModel />
+</Page.DataContext>
+    
 
-    </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="720" Width="1280">
+<StackPanel HorizontalAlignment="Left" Height="720" Width="640">
+    <TextBlock Text="Kvittering" HorizontalAlignment="Center" Height="100" Width="200" FontFamily="Arial Black" FontSize="40"/>
+    <StackPanel Orientation="Horizontal">
+    <TextBlock Text="Bestilling:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
+                <ListView Height="100" Width="80" ItemsSource="{Binding Sæde}">
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="Sæde Nr"/>
+                                <TextBlock Text="{Binding Nummer}"/>
+                                <TextBlock Text="Række Nr"/>
+                                <TextBlock Text="{Binding RækkeNr}"/>
+                                
+                            </StackPanel>
+
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackPanel>
+    <StackPanel Orientation="Horizontal" Height="50">
+        <TextBlock Text="Total pris:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
+        <TextBlock Text="{Binding Pris}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
+                <TextBlock Text="Kr."/>
+
+            </StackPanel>
+    <StackPanel Orientation="Horizontal" Height="50">
+        <TextBlock Text="Navn:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
+        <TextBlock Text="{Binding Kunde.Navn}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
+
+
+    </StackPanel>
+    <StackPanel Orientation="Horizontal" Height="50">
+        <TextBlock Text="Email:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
+        <TextBlock Text="{Binding Kunde.Email}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
+
+
+    </StackPanel>
+    <StackPanel Orientation="Horizontal" Height="50">
+        <TextBlock Text="Addresse:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
+        <TextBlock Text="{Binding Kunde.Adresse}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
+
+
+    </StackPanel>
+    <StackPanel Orientation="Horizontal" Height="50">
+        <TextBlock Text="Post nummer:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
+        <TextBlock Text="{Binding Kunde.PostNummer}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
+
+
+    </StackPanel>
+    <StackPanel Orientation="Horizontal" Height="50">
+        <TextBlock Text="Telefon nr:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
+        <TextBlock Text="{Binding Kunde.TlfNr}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
+
+
+    </StackPanel>
+
+
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" Height="720" Width="640">
+            <TextBlock Text="Tak for din bestilling!" HorizontalAlignment="Center" Height="100" Width="400" FontSize="40"/>
+            <TextBlock Text="Vi håber du nyder filmen!" HorizontalAlignment="Center" Height="100" Width="450" FontSize="40"/>
+            <Button Content="Ny bestilling"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch" Click="Button_navigation_MainPage"
+                    Width="200"/>
+
+        </StackPanel>
+        </StackPanel>
+   
 </Page>
+
