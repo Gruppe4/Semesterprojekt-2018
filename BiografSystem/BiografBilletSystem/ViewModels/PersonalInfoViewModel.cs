@@ -14,6 +14,8 @@ namespace BiografBilletSystem.ViewModels
         private int _børneBilleter;
         private int _seniorBilleter;
         private static Kunde _instance;
+        private bool _medlem;
+        private int _pris;
         public static Kunde Instance
         {
             get
@@ -29,9 +31,10 @@ namespace BiografBilletSystem.ViewModels
             Instance.Betaling = new Betaling(0, 000, new DateTime(), "(Navn på kortholder)");
             _valgteForestillingViewModel = ForestillingViewModel.Instance;
             _instance.BestilteSæder = _valgteForestillingViewModel.SalViewModel.ValgteSæder;
-            _voksenBilleter = ForestillingViewModel.SalViewModel.ValgteSæder.Count;
+            VoksenBilleter = ForestillingViewModel.SalViewModel.ValgteSæder.Count;
             _seniorBilleter = 0;
             _børneBilleter = 0;
+            _medlem = _instance.Betaling.Billet.Medlemsskab;
         }
 
         public int VoksenBilleter
@@ -39,12 +42,15 @@ namespace BiografBilletSystem.ViewModels
             get
             {
                 _voksenBilleter = ForestillingViewModel.SalViewModel.ValgteSæder.Count - (BørneBilleter + SeniorBilleter);
+                _instance.Betaling.Billet.VoksenBillet = _voksenBilleter;
+                OnPropertyChanged(nameof(Pris));
                 return _voksenBilleter;
             }
             set
             {
                 _voksenBilleter = ForestillingViewModel.SalViewModel.ValgteSæder.Count - (_børneBilleter + _seniorBilleter);
                 _instance.Betaling.Billet.VoksenBillet = value;
+                OnPropertyChanged(nameof(Pris));
             }
         }
 
@@ -61,10 +67,12 @@ namespace BiografBilletSystem.ViewModels
                     _seniorBilleter = ForestillingViewModel.SalViewModel.ValgteSæder.Count - _børneBilleter == 0
                         ? 0
                         : ForestillingViewModel.SalViewModel.ValgteSæder.Count - _børneBilleter;
+                    _instance.Betaling.Billet.SeniorBillet = _seniorBilleter;
                     OnPropertyChanged(nameof(SeniorBilleter));
                 }
                 OnPropertyChanged(nameof(VoksenBilleter));
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(Pris));
             }
         }
         public int SeniorBilleter
@@ -80,10 +88,12 @@ namespace BiografBilletSystem.ViewModels
                     _børneBilleter = ForestillingViewModel.SalViewModel.ValgteSæder.Count - _seniorBilleter == 0
                         ? 0
                         : ForestillingViewModel.SalViewModel.ValgteSæder.Count - _seniorBilleter;
+                    _instance.Betaling.Billet.BørneBillet = _børneBilleter;
                     OnPropertyChanged(nameof(BørneBilleter));
                 }
                 OnPropertyChanged(nameof(VoksenBilleter));
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(Pris));
             }
         }
 
@@ -115,6 +125,21 @@ namespace BiografBilletSystem.ViewModels
         public ForestillingViewModel ForestillingViewModel
         {
             get { return _valgteForestillingViewModel; }
+        }
+
+        public bool Medlem
+        {
+            get { return _medlem; }
+            set
+            {
+                _medlem = value;
+                _instance.Betaling.Billet.Medlemsskab = value;
+                OnPropertyChanged(nameof(Pris));
+            }
+        }
+        public int Pris
+        {
+            get { return _pris = Kunde.Betaling.Billet.Pris(); }
         }
 
 

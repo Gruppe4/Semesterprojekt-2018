@@ -37,7 +37,7 @@
     <TextBox Text="{Binding Kunde.TlfNr, Mode=TwoWay}" MaxLength="8" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
 
     <TextBlock Text="Er du medlem?" Height="30" Width="200" Margin="10, 10, 10, 10"/>
-<ToggleSwitch HorizontalAlignment="Center" IsOn="{Binding Kunde.Betaling.Billet.Medlemsskab, Mode=TwoWay}" OffContent="Nej" OnContent="Ja"/>
+<ToggleSwitch HorizontalAlignment="Center" IsOn="{Binding Medlem, Mode=TwoWay}" OffContent="Nej" OnContent="Ja"/>
             <Button Content="Tilbage"
                     Width="100"
                     HorizontalAlignment="Stretch"
@@ -91,8 +91,17 @@
                         <ComboBox ItemsSource="{Binding SeniorList, Mode=TwoWay}"
                                   SelectedItem="{Binding SeniorBilleter, Mode=TwoWay}"/>
                     </StackPanel>
+                
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <TextBlock Text="Pris:   "
+                               Width="50"
+                               HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock Text="{Binding Pris}"
+                               Width="50"></TextBlock>
+                </StackPanel>
                 <Button Content="Betal"
-                        Margin="0,106,0,0"
+                        Margin="0,86,0,0"
                         Width="100"
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch"
