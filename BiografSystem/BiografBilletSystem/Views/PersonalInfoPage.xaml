@@ -31,10 +31,17 @@
     <TextBox Text="{Binding Kunde.Email, Mode=TwoWay}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
 
     <TextBlock Text="Postnummer" Height="30" Width="200" Margin="10, 10, 10, 10"/>
-    <TextBox Text="{Binding Kunde.PostNummer, Mode=TwoWay}" MaxLength="4" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
+    <TextBox Text="{Binding Kunde.PostNummer, Mode=TwoWay}" MaxLength="4" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2" KeyDown="KeyDown"/>
 
     <TextBlock Text="Telefon nummer" Height="30" Width="200" Margin="10, 10, 10, 10"/>
-    <TextBox Text="{Binding Kunde.TlfNr, Mode=TwoWay}" MaxLength="8" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
+            <TextBox Text="{Binding Kunde.TlfNr, Mode=TwoWay}"
+                     MaxLength="8"
+                     Height="30"
+                     Width="200"
+                     Margin="10, 10, 10, 10"
+                     BorderBrush="Black"
+                     BorderThickness="2"
+                     KeyDown="KeyDown" />
 
     <TextBlock Text="Er du medlem?" Height="30" Width="200" Margin="10, 10, 10, 10"/>
 <ToggleSwitch HorizontalAlignment="Center" IsOn="{Binding Medlem, Mode=TwoWay}" OffContent="Nej" OnContent="Ja"/>
@@ -53,7 +60,15 @@
     <TextBox Text="{Binding Betaling.Kortholder, Mode=TwoWay}" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2"/>
 
                 <TextBlock Text="Kortnummer" Height="30" Width="200" Margin="10, 10, 10, 10"/>
-                    <TextBox Text="{Binding Betaling.Kortnummer, Mode=TwoWay}" HorizontalAlignment="Center" Height="30" Width="200" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2" MaxLength="16"/>
+            <TextBox Text="{Binding Betaling.Kortnummer, Mode=TwoWay}"
+                     HorizontalAlignment="Center"
+                     Height="30"
+                     Width="200"
+                     Margin="10, 10, 10, 10"
+                     BorderBrush="Black"
+                     BorderThickness="2"
+                     MaxLength="16"
+                     KeyDown="KeyDown" />
 
 
                 
@@ -61,7 +76,14 @@
                 <DatePicker HorizontalAlignment="Center" DayVisible="False"/>
 
                 <TextBlock Text="Kontrolcifre" Height="30" Width="200" Margin="10, 10, 10, 0" />
-                    <TextBox Text="{Binding Betaling.Kontrolcifre, Mode=TwoWay}" Height="30" Width="30" Margin="10, 10, 10, 10" BorderBrush="Black" BorderThickness="2" MaxLength="3"/>
+            <TextBox Text="{Binding Betaling.Kontrolcifre, Mode=TwoWay}"
+                     Height="30"
+                     Width="30"
+                     Margin="10, 10, 10, 10"
+                     BorderBrush="Black"
+                     BorderThickness="2"
+                     MaxLength="3"
+                     KeyDown="KeyDown" />
             <StackPanel Orientation="Vertical"
                         BorderBrush="Black"
                         BorderThickness="2"
