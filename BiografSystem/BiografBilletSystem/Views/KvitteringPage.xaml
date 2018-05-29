@@ -40,9 +40,20 @@
         <TextBlock Text="Total pris:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
         <TextBlock Text="{Binding Pris}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
                 <TextBlock Text="Kr."/>
+</StackPanel>
+        <StackPanel Orientation="Horizontal" Height="50">
+            <TextBlock Text="Din forestilling:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
+            <TextBlock Text="{Binding ForestillingViewModel.Forestilling.Film.Titel}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
+
+                </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Height="50">
+            <TextBlock Text="Start tid:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
+            <TextBlock Text="{Binding ForestillingViewModel.Forestilling.StartTid}" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
 
             </StackPanel>
-    <StackPanel Orientation="Horizontal" Height="50">
+
+                    <StackPanel Orientation="Horizontal" Height="50">
         <TextBlock Text="Navn:" HorizontalAlignment="Left" Height="50" Width="200" FontSize="20"/>
         <TextBlock Text="{Binding Kunde.Navn}" HorizontalAlignment="Center" Height="50" Width="500" FontSize="20"/>
 
