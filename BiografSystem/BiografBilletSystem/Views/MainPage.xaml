@@ -113,7 +113,7 @@
                     <TextBlock Text="{Binding SelectedForestilling.Film.Resumé}"
                                TextWrapping="Wrap" />
 
-                    <TextBlock Text="Dato:"
+                    <TextBlock Text="Premiere:"
                                HorizontalAlignment="Center"
                                FontStyle="Oblique"
                                FontWeight="Bold" />

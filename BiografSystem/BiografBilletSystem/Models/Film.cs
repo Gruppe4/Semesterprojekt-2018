@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Globalization;
 
 namespace BiografBilletSystem.Models
 {
     public class Film
     {
         //To-do: Skal indeholde alt relevant information om en specifik film
+        private DateTime _dato;
 
         public string Titel { get; private set; }
         public int Spilletid { get; private set; }
@@ -12,7 +14,10 @@ namespace BiografBilletSystem.Models
         public string Indstruktør { get; private set; }
         public string Genre { get; private set; }
         public string Resumé { get; private set; }
-        public DateTime Dato { get; private set; }
+        public string Dato
+        {
+            get { return _dato.ToString("dd / MM / yyyy g", CultureInfo.CurrentCulture); }
+        }
         public string BilledeUri { get; private set; }
 
         public Film(string titel, int spilletid, string stjerner, string indstruktør, 
@@ -24,7 +29,7 @@ namespace BiografBilletSystem.Models
             Indstruktør = indstruktør;
             Genre = genre;
             Resumé = resumé;
-            Dato = dato;
+            _dato = dato;
             BilledeUri = billede;
         }
     }

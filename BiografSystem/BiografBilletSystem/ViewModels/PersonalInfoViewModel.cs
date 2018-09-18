@@ -20,15 +20,15 @@ namespace BiografBilletSystem.ViewModels
         {
             get
             {
-                _instance = _instance ?? (_instance = new Kunde("(Navn)", "(Addresse)", "(Email)", 0000, 00000000, new List<Sæde>()));
+                _instance = _instance ?? (_instance = new Kunde("Henrik Andersen", "Hillerødvej 1", "Henrik@Andersen.com", 3400, 48484848, new List<Sæde>()));
                 return _instance;
             }
         }
 
         public PersonalInfoViewModel()
         {
-            _instance = new Kunde("(Navn)", "(Addresse)", "(Email)", 0000, 00000000, new List<Sæde>());
-            Instance.Betaling = new Betaling(0, 000, new DateTime(), "(Navn på kortholder)");
+            _instance = new Kunde("Henrik Andersen", "Hillerødvej 1", "Henrik@Andersen.com", 3400, 48484848, new List<Sæde>());
+            Instance.Betaling = new Betaling(4545454545454545, 666, new DateTime(), "Henrik Andersen");
             _valgteForestillingViewModel = ForestillingViewModel.Instance;
             _instance.BestilteSæder = _valgteForestillingViewModel.SalViewModel.ValgteSæder;
             VoksenBilleter = ForestillingViewModel.SalViewModel.ValgteSæder.Count;
